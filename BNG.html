@@ -130,18 +130,22 @@
             border: 0px solid #003366;
         }
 
+        .dropDownAccountVvTotalHeightVv {
+            height: 234px;
+        }
 
         .memberVvSubMenu {
             background-color: #FFF;
-            transition: .3s;
             height: 132px;
+            overflow: hidden;
+            transition: height .3s ease-in, border .25s linear;
             /* overflow: hidden; */
         }
 
         .memberVvSubMenu.hide {
             /* display: none; */
             height: 0px;
-            /* overflow: hidden; */
+            border: 0px solid #003366;
         }
 
         .dropDownAccountVv li {
@@ -210,12 +214,18 @@
 
         .plusIcon {
             background-color: #003366;
+            /* background-color: #FF7300; */
             width: 16px;
             height: 16px;
             border-radius: 50%;
             position: relative;
             display: inline-block;
             margin: 10px 0 -2px 5px;
+            transition: .3s;
+        }
+
+        .plusIcon.minus {
+            background-color: #FF7300;
         }
 
         .plusIcon::before {
@@ -223,7 +233,7 @@
             display: block;
             width: 60%;
             height: 2px;
-            background-color: #FF7300;
+            background-color: #FFF;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -235,7 +245,7 @@
             display: block;
             width: 60%;
             height: 2px;
-            background-color: orange;
+            background-color: #FFF;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -484,6 +494,8 @@
             $('.memberVvSubMenu').addClass('hide');
             $('.dropDownCartVv').addClass('hide');
             $('.dropDownMenuVv').addClass('hide');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
         })
 
         $('.accountIconVv').click(function () {
@@ -495,6 +507,8 @@
 
             $('.dropDownCartVv').addClass('hide').addClass('accountShow');
             $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
         })
 
         $('.memberVv').click(function () {
@@ -502,18 +516,19 @@
             console.log('memberVv click');
             $('.memberVvSubMenu').toggleClass('hide');
             $('.plusIcon').toggleClass('minus');
-
+            $('.dropDownAccountVv').toggleClass('dropDownAccountVvTotalHeightVv')
         })
 
         $('.cartIconVv').click(function () {
             event.stopPropagation();
             console.log('cartIconVv');
-
             // $('.dropDownMenuVv').addClass('cartShow');
             $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
             $('.dropDownCartVv').toggleClass('hide');
             $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
             $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
         })
 
         $('.menuIconVv').click(function () {
@@ -522,6 +537,8 @@
             $('.dropDownMenuVv').toggleClass('hide');
             $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
             $('.dropDownCartVv').addClass('hide').addClass('menuShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
         })
 
         let scrollLast = 0;
