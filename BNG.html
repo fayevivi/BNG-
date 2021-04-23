@@ -203,9 +203,6 @@
             display: none;
         }
 
-        /* .accountShow {
-            transition: 0s;
-        } */
 
         .cartShow,
         .accountShow {
@@ -257,8 +254,30 @@
             transform: translate(-50%, -50%);
         }
 
+        .topButtonWrapVv {
+            background-image: url(./img/top.svg);
+            background-color: rgba(255, 255, 255, 0.452);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* transition: .3s; */
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            opacity: 0;
+            transition: .3s;
+            /* visibility: hidden; */
+
+        }
+
+        .topButtonWrapVv.show {
+            opacity: 1;
+            /* visibility: visible; */
+        }
+
+
         .contentVv {
-            width: 100%;
+            padding-top: 100px;
             height: 3000px;
         }
 
@@ -409,9 +428,6 @@
         <div class="navBarVv">
             <div class="logoWrapVv">
                 <img src="./img/logo.svg" alt="">
-                <!-- <svg>
-                    <use xlink:href="./svg2.svg#LOGO"></use>
-                </svg> -->
             </div>
             <div class="navBarRightVv">
                 <div class="mainMenuVv">
@@ -465,7 +481,16 @@
         </div>
     </div>
 
-    <div class="contentVv"></div>
+    <div class="topButtonWrapVv">
+        <a href="#"></a>
+        <!-- <img src="./img/top.svg" alt=""> -->
+    </div>
+
+    <div class="contentVv">
+        <h1>從這開始放你的內容</h1>
+    </div>
+    <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
+
     <div class="footerVv">
         <div class="footerContentVv">
             <div class="flexWrap">
@@ -488,6 +513,7 @@
     <script src="./jquery-3.6.0.js"></script>
 
     <script>
+        // 以下為navBar下拉選單
         $('body').click(function () {
             console.log('body click');
             $('.dropDownAccountVv').addClass('hide');
@@ -541,6 +567,7 @@
             $('.plusIcon').removeClass('minus');
         })
 
+        // 以下為navBar fixed and show/hide
         let scrollLast = 0;
 
         $(window).scroll(function () {
@@ -563,6 +590,21 @@
             }
             scrollLast = scrollNow;
         })
+
+        // 以下為topButton
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                $('.topButtonWrapVv').addClass('show');
+            }
+            else {
+                $('.topButtonWrapVv').removeClass('show');
+            };
+        });
+
+        $('.topButtonWrapVv').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, '300')
+        });
+
     </script>
 
 
