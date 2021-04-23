@@ -254,32 +254,7 @@
             transform: translate(-50%, -50%);
         }
 
-        .topButtonWrapVv {
-            background-image: url(./img/top.svg);
-            background-color: rgba(255, 255, 255, 0.452);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            /* transition: .3s; */
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            opacity: 0;
-            transition: .3s;
-            /* visibility: hidden; */
 
-        }
-
-        .topButtonWrapVv.show {
-            opacity: 1;
-            /* visibility: visible; */
-        }
-
-
-        .contentVv {
-            padding-top: 100px;
-            height: 3000px;
-        }
 
         @media (max-width:576px) {
             .navBarVv {
@@ -368,6 +343,40 @@
                 border-bottom: none;
             }
 
+        }
+
+        .topButtonWrapVv {
+            background-image: url(./img/top.svg);
+            background-color: rgba(255, 255, 255, 0.452);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            /* transition: .3s; */
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            opacity: 0;
+            transition: .3s;
+            /* visibility: hidden; */
+
+        }
+
+        .topButtonWrapVv.show {
+            opacity: 1;
+            /* visibility: visible; */
+        }
+
+
+        .contentVv {
+            padding-top: 100px;
+            height: 3000px;
+        }
+
+        @media(max-width:576px) {
+            .topButtonWrapVv {
+                bottom: 17p~x;
+                right: 17px;
+            }
         }
 
         /* 以下為footer */
@@ -604,6 +613,8 @@
         $('.topButtonWrapVv').click(function () {
             $('html, body').animate({ scrollTop: 0 }, '300')
         });
+
+        // why $('.topButtonWrapVv') disabled???
 
     </script>
 
