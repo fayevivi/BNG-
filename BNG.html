@@ -41,7 +41,7 @@
         /* 以下navBar */
 
         .navBarOutVv {
-            max-width: 1920px;
+            width: 100%;
             background-color: #FFF;
             position: fixed;
             width: 100%;
@@ -347,7 +347,6 @@
 
         .topButtonWrapVv {
             background-image: url(./img/top.svg);
-            background-color: rgba(255, 255, 255, 0.452);
             width: 60px;
             height: 60px;
             border-radius: 50%;
@@ -357,13 +356,18 @@
             right: 40px;
             opacity: 0;
             transition: .3s;
-            /* visibility: hidden; */
-
+            background-color: rgba(255, 255, 255, 0.452);
+            visibility: hidden;
+            /* display: none; */
         }
+
+        /* opacity:0>>變透明肉眼看不見但物體及功能完全都存在;
+visibility:hidden>>看不見但物體存在不過無功能，點不到;
+display:none>>物體完全不存在 */
 
         .topButtonWrapVv.show {
             opacity: 1;
-            /* visibility: visible; */
+            visibility: visible;
         }
 
 
@@ -372,11 +376,22 @@
             height: 3000px;
         }
 
+
         @media(max-width:576px) {
             .topButtonWrapVv {
-                bottom: 17p~x;
+                bottom: 17px;
                 right: 17px;
+                width: 50px;
+                height: 50px;
+                background-position: center;
+                background-size: cover;
             }
+
+            .topButtonWrapVv img {
+                width: 100%;
+                height: 100%;
+            }
+
         }
 
         /* 以下為footer */
@@ -491,16 +506,15 @@
     </div>
 
     <div class="topButtonWrapVv">
-        <a href="#"></a>
-        <!-- <img src="./img/top.svg" alt=""> -->
     </div>
+    <!-- 頁內連結只能放#id，JQ click的權限通常較大，除非a換頁才不會被JQ的權限覆蓋-->
 
     <div class="contentVv">
         <h1>從這開始放你的內容</h1>
     </div>
     <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
 
-    <div class="footerVv">
+    <div id="foot" class="footerVv">
         <div class="footerContentVv">
             <div class="flexWrap">
                 <ul>
@@ -580,7 +594,7 @@
         let scrollLast = 0;
 
         $(window).scroll(function () {
-            console.log('scroll top', $(this).scrollTop());
+            // console.log('scroll top', $(this).scrollTop());
             let scrollNow = $(this).scrollTop();
 
 
@@ -589,16 +603,27 @@
             }
             else {
                 if (scrollLast < scrollNow) {
-                    console.log('往下');
+                    // console.log('往下');
                     $('.navBarOutVv').addClass('hideNav');
                 }
                 else {
-                    console.log('往上');
+                    // console.log('往上');
                     $('.navBarOutVv').removeClass('hideNav');
                 }
             }
             scrollLast = scrollNow;
         })
+
+        // $(window).scroll(function () {
+        //     console.log('windowHeight', $(window).height());
+        //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
+        //         $('.topButtonWrapVv').addClass('show');
+        //     }
+        //     else {
+        //         $('.topButtonWrapVv').removeClass('show');
+        //     };
+        // });
+
 
         // 以下為topButton
         $(window).scroll(function () {
@@ -612,9 +637,11 @@
 
         $('.topButtonWrapVv').click(function () {
             $('html, body').animate({ scrollTop: 0 }, '300')
+            // console.log('topButtonWrapVv a click');
+            // $('h1').html('從這開始放你的內123');
         });
 
-        // why $('.topButtonWrapVv') disabled???
+
 
     </script>
 
