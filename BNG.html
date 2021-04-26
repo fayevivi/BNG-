@@ -11,11 +11,17 @@
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/js/bootstrap.bundle.js">
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
 
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
         body {
             /* max-width: 1920px; */
             margin: 0px;
             padding: 0px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: normal;
+            /* regular=normal=400 */
 
         }
 
@@ -86,7 +92,13 @@
         }
 
         .mainMenuVv>ul>li {
-            margin: 0px 10px;
+            /* margin: 0px 5px; */
+            padding: 0px 10px;
+            border-right: 1px solid #003366;
+        }
+
+        .mainMenuVv>ul li:nth-child(4) {
+            border-right: none;
         }
 
         .iconWrapVv {
@@ -359,6 +371,8 @@
             background-color: rgba(255, 255, 255, 0.452);
             visibility: hidden;
             z-index: 999999;
+            pointer-events: auto;
+            cursor: pointer;
             /* display: none; */
         }
 
