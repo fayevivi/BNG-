@@ -71,6 +71,7 @@
 
         .hideNav {
             transform: translate(-50%, -135px);
+            :
         }
 
         .navBarRightVv {
@@ -92,13 +93,24 @@
         }
 
         .mainMenuVv>ul>li {
-            /* margin: 0px 5px; */
-            padding: 0px 10px;
-            border-right: 1px solid #003366;
+            padding: 0px 20px;
+            position: relative;
         }
 
-        .mainMenuVv>ul li:nth-child(4) {
-            border-right: none;
+        .mainMenuVv>ul li:nth-child(4)::after {
+            display: none;
+        }
+
+        .mainMenuVv>ul>li::after {
+            width: 1px;
+            height: 16px;
+            background-color: #003366;
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
         }
 
         .iconWrapVv {
