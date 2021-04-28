@@ -12,10 +12,17 @@
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
         body {
             /* max-width: 1920px; */
             margin: 0px;
             padding: 0px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: normal;
+            /* regular=normal=400 */
 
         }
 
@@ -48,6 +55,7 @@
             left: 50%;
             transform: translateX(-50%);
             transition: .5s;
+            z-index: 9999999;
         }
 
         .navBarVv {
@@ -86,7 +94,24 @@
         }
 
         .mainMenuVv>ul>li {
-            margin: 0px 10px;
+            padding: 0px 20px;
+            position: relative;
+        }
+
+        .mainMenuVv>ul li:nth-child(4)::after {
+            display: none;
+        }
+
+        .mainMenuVv>ul>li::after {
+            width: 1px;
+            height: 16px;
+            background-color: #003366;
+            display: block;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
         }
 
         .iconWrapVv {
@@ -389,11 +414,19 @@ display:none>>物體完全不存在 */
 
         }
 
-        .contentVv {
+        /* 以下為banner */
+
+        .hpContentVv {
             padding-top: 100px;
         }
 
-        .bannerWrapVv {
+        @media (max-width:576px) {
+            .hpContentVv {
+                padding-top: 55px;
+            }
+        }
+
+        .hpBannerWrapVv {
             width: 100%;
             height: 978px;
             overflow: hidden;
@@ -401,7 +434,7 @@ display:none>>物體完全不存在 */
             margin: 0 auto;
         }
 
-        .bannerWrapVv .imgWrapVv {
+        .hpBannerWrapVv .imgWrapVv {
             width: 300%;
             height: 978px;
             position: absolute;
@@ -410,7 +443,7 @@ display:none>>物體完全不存在 */
             transition: .3s;
         }
 
-        .bannerWrapVv .imgWrapVv li {
+        .hpBannerWrapVv .imgWrapVv li {
             flex-basis: 0;
             /* basis調整的是flex主軸上的長度，若flex-direction:colum的話basis調整的是高;
             裡面的數字代表的是長度單位，basis:0代表的是父層長度的0px或%(正常要下單位)數字依照你的需求下。:沒下的話預設是auto,代表內容物的長度 */
@@ -419,13 +452,13 @@ display:none>>物體完全不存在 */
         }
 
 
-        .bannerWrapVv .imgWrapVv img {
+        .hpBannerWrapVv .imgWrapVv img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .sliderDotsVv {
+        .hpSliderDotsVv {
             position: absolute;
             bottom: 0;
             list-style-type: none;
@@ -434,11 +467,426 @@ display:none>>物體完全不存在 */
             width: 100%;
         }
 
-        .sliderDotsVv li {
+        .hpSliderDotsVv li {
             width: 60px;
             height: 10px;
             margin: 0px 10px;
             background-color: rgba(255, 255, 255, 0.56);
+        }
+
+        .hpsloganWrapVv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            z-index: 99999;
+            color: #FFF;
+        }
+
+        .hpSloganLinesVv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            z-index: 99998;
+        }
+
+        .hpTitleVv {
+            font-size: 48px;
+            font-weight: 500;
+            /* font-weight:500=medium */
+            letter-spacing: 4.8px;
+            /* XD character-spacing:100=CSS letter-spacing:4.8px */
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .hpSubtitleVv {
+            margin-top: 10px;
+            font-size: 26px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+        }
+
+        .hpBannerArrowLeftVv {
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            transform: translateY(-50%) scaleX(-1);
+            z-index: 99997;
+        }
+
+        .hpBannerArrowRightVv {
+            position: absolute;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            z-index: 99997;
+        }
+
+        @media (max-width:576px) {
+            .hpBannerWrapVv {
+                width: 100%;
+                height: 250px;
+            }
+
+            .hpBannerWrapVv .imgWrapVv {
+                width: 300%;
+                height: 250px;
+            }
+
+
+            .hpSloganLinesVv {
+                width: 334.5px;
+                height: 64px;
+            }
+
+            .hpTitleVv {
+                font-size: 20px;
+                letter-spacing: 2.4px;
+                line-height: 13px;
+                white-space: nowrap;
+            }
+
+            .hpSubtitleVv {
+                font-size: 12px;
+                white-space: nowrap;
+            }
+
+            .hpBannerArrowLeftVv {
+                width: 16px;
+                height: 16px;
+                top: 89%;
+            }
+
+            .hpBannerArrowRightVv {
+                width: 16px;
+                height: 16px;
+                top: 89%;
+            }
+
+
+            .hpSliderDotsVv li {
+                width: 30px;
+                height: 8px;
+            }
+
+        }
+
+        /* 以下為aboutUs */
+
+
+        .hpAboutUsVv {
+            padding: 144px 0px 0px 416px;
+            position: relative;
+        }
+
+        .hpDecorationAboutUsLeftVv {
+            position: absolute;
+            top: 90%;
+            left: 102px;
+        }
+
+        .hpDecorationAboutUsRightVv {
+            position: absolute;
+            top: 214px;
+            right: 0;
+        }
+
+        .hpTitleMarkVv {
+            width: 200px;
+            height: 95px;
+            background-image: url(./img/title\ mark.svg);
+        }
+
+        .hpTitleMarkContentVv {
+            width: 100%;
+            color: #fff;
+            font-size: 26px;
+            font-weight: 500;
+            letter-spacing: 4.8px;
+            text-align: center;
+            transform: translateY(35%);
+            white-space: nowrap;
+        }
+
+        .hpAboutContentWrapVv {
+            display: flex;
+            margin-top: 66px;
+            height: auto;
+        }
+
+        .hpAboutUsCotentBCCVv {
+            background-color: #F1F1F1;
+            height: auto;
+        }
+
+        .hpAboutUsContentVv {
+            margin: 66px 128px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hpTitleOrangeVv {
+            font-size: 26px;
+            color: #FF7300;
+            font-weight: 500;
+            letter-spacing: 2.6px;
+            line-height: 50px;
+        }
+
+        .orangePositionVv {
+            position: relative;
+        }
+
+        .hpTitleOrangeLineVv::after {
+            display: block;
+            content: "";
+            width: 145px;
+            height: 1px;
+            background-color: #FF7300;
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(-12%, -50%);
+        }
+
+        .hpP16Vv {
+            font-size: 16px;
+            color: #003366;
+            font-weight: 400;
+            letter-spacing: 0.8px;
+            line-height: 30px;
+            white-space: nowrap;
+        }
+
+        .hpAboutUsContentVv p {
+            margin-top: 18px;
+            margin-bottom: 0px;
+        }
+
+        .hpMobileShowVv {
+            display: none;
+        }
+
+        .hpAboutUsImgWrapVv {
+            width: 830px;
+            height: auto;
+            /* height: 470px; */
+        }
+
+        .hpAboutUsImgWrapVv img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .hpSectionVv {
+            margin-top: 150px;
+        }
+
+        .hpTitleMarkWrapVv {
+            margin-bottom: 66px;
+        }
+
+        .hpSelectedTripVv .hpTitleMarkWrapVv {
+            width: 100%;
+        }
+
+        .hpSelectedTripVv .hpTitleMarkVv {
+            margin: 0 auto;
+        }
+
+        @media (max-width:576px) {
+            .hpDecorationAboutUsLeftVv {
+                display: none;
+            }
+
+            .hpDecorationAboutUsRightVv {
+                width: 160px;
+                height: fit-content;
+                top: 100%;
+            }
+
+            .hpAboutUsVv {
+                padding: 0px 0px;
+                position: relative;
+            }
+
+            .hpSectionMobileVv {
+                padding: 40px 30px 0px 30px
+            }
+
+            .hpTitleMarkWrapVv {
+                margin-bottom: 0;
+            }
+
+            .hpTitleMarkVv {
+                width: 120px;
+                height: 57px;
+                background-size: cover;
+            }
+
+            .hpTitleMarkContentVv {
+                font-size: 16px;
+                letter-spacing: 1.6px;
+            }
+
+            .hpAboutContentWrapVv {
+                margin-top: 0px;
+            }
+
+            .hpAboutUsCotentBCCVv {
+                background-color: #fff;
+                /* height: auto; */
+            }
+
+            .hpAboutUsContentVv {
+                margin: 0 auto;
+            }
+
+            .hpTitleOrangeVv {
+                font-size: 16px;
+                color: #FF7300;
+                font-weight: 400;
+                letter-spacing: 1.6px;
+                line-height: 50px;
+                position: relative;
+            }
+
+            .orangePositionVv {
+                position: relative;
+            }
+
+
+            .hpTitleOrangeLineVv::after {
+                display: none;
+            }
+
+            .hpAboutUsContentVv {
+                display: none;
+            }
+
+            .hpMobileShowVv {
+                display: block;
+            }
+
+            .hpMobileShowVv p {
+                color: #003366;
+                font-size: 14px;
+                letter-spacing: 0.7px;
+                line-height: 24px;
+                margin-top: 10px;
+                white-space: normal;
+            }
+
+            .hpAboutUsImgWrapVv {
+                display: none;
+            }
+
+            .hpSelectedTripVv {
+                margin-top: 80px;
+            }
+
+            .hpSelectedTripVv .hpTitleMarkVv {
+                margin: 0;
+            }
+
+        }
+
+        .row {
+            margin: 66px auto;
+        }
+
+        .hpP22Vv {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 2.2px;
+            line-height: 50px;
+            color: #003366;
+        }
+
+        .centerVv {
+            text-align: center;
+        }
+
+        .hpSelectedTripPicWrapOutVv {
+            position: relative;
+        }
+
+        .hpSelectedTripPicWrapOutVv1::before {
+            content: "01";
+            display: block;
+            position: absolute;
+            top: -5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #003366;
+            z-index: 88888;
+        }
+
+        .hpSelectedTripPicWrapOutVv2::before {
+            content: "02";
+            display: block;
+            position: absolute;
+            top: -5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #003366;
+            z-index: 88888;
+        }
+
+        .hpSelectedTripPicWrapOutVv3::before {
+            content: "03";
+            display: block;
+            position: absolute;
+            top: -5%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #003366;
+            z-index: 88888;
+        }
+
+        /* 圖片處理>>須調整位置 */
+        .hpSelectedTripPicWrapOutVv {
+            width: 100%;
+        }
+
+        .hpSelectedTripPicWrapVv {
+            width: 260px;
+            height: 260px;
+            overflow: hidden;
+            object-fit: cover;
+            object-position: 50% 50%;
+            border-radius: 50%;
+        }
+
+        .hpSelectedTripPicWrapVv img {
+            width: fit-content;
+            height: fit-content;
+        }
+
+        @media (max-width:576px) {
+            .hpSelectedTripPicWrapOutVv {
+                width: 100%;
+                flex-shrink: 1;
+            }
+
+            .hpP22Vv {
+                color: #FF7300;
+                font-size: 16px;
+                letter-spacing: 1.6px;
+                line-height: 24px;
+            }
+
+            .centerVv {
+                text-align: left;
+            }
+
+            .hpSelectedTripCurveWordsVv {
+                display: none;
+            }
         }
 
 
@@ -557,19 +1005,148 @@ display:none>>物體完全不存在 */
     </div>
     <!-- 頁內連結只能放#id，JQ click的權限通常較大，除非a換頁才不會被JQ的權限覆蓋-->
 
-    <div class="contentVv">
-        <div class="bannerWrapVv">
+    <div class="hpContentVv">
+        <div class="hpBannerWrapVv">
+            <div class="hpsloganWrapVv">
+                <div class="hpTitleVv">享受前所未有的騎行體驗</div>
+                <div class="hpSubtitleVv">Let the unforgettable riding experience begin</div>
+            </div>
+            <div class="hpSloganLinesVv">
+                <img src="./img/slogan lines.2.svg" alt="">
+            </div>
+            <div class="hpBannerArrowLeftVv">
+                <img src="./img/Icon - icon-arrow-right.svg" alt="">
+            </div>
+            <div class="hpBannerArrowRightVv">
+                <img src="./img/Icon - icon-arrow-right.svg" alt="">
+            </div>
             <ul class="imgWrapVv d-flex list-unstyled">
                 <li><img src="./img/hpBanner1.png" alt=""></li>
                 <li><img src="./img/hpBanner1.png" alt=""></li>
                 <li><img src="./img/hpBanner1.png" alt=""></li>
             </ul>
-            <ul class="sliderDotsVv">
+            <ul class="hpSliderDotsVv">
                 <li></li>
                 <li></li>
                 <li></li>
             </ul>
         </div>
+        <!-- 以下為AboutUs -->
+        <div class="hpAboutUsVv hpSectionMobileVv" id="hpAboutUsVv">
+            <div class="hpDecorationAboutUsLeftVv">
+                <img src="./img/treeBig.svg" alt="">
+            </div>
+            <div class="hpDecorationAboutUsRightVv">
+                <img src="./img/hillSmall.svg" alt="">
+            </div>
+            <div class="hpTitleMarkWrapVv">
+                <div class="hpTitleMarkVv">
+                    <div class="hpTitleMarkContentVv">關於我們</div>
+                </div>
+            </div>
+            <div class="hpAboutContentWrapVv">
+                <div class="hpAboutUsCotentBCCVv">
+                    <div class="hpAboutUsContentVv">
+                        <div class="hpTitleOrangeVv hpTitleOrangeLineVv orangePositionVv">BikeNGo，有bike就可Go！</div>
+                        <p class="hpP16Vv">近年來戶外運動風氣盛行<br>
+                            單車人口不斷增加<br>
+                            台灣本有成熟的單車工業<br>
+                            後疫情時代單車更是健康安全的休閒運動<br>
+                            然而，不論資深車友或入門初學者<br>
+                            難免有不易找到同伴交流的困擾<br>
+                            透過網路搜尋、商家或親友，獲得資訊往往零碎紛雜<br>
+                            於是我們便提供喜愛單車的朋友一個完整方便的交流平台<br>
+                            認識同好，隨時呼朋引伴，並參加行程開騎</p>
+                    </div>
+                    <div class=" hpMobileShowVv">
+                        <div class="hpTitleOrangeVv hpTitleOrangeLineVv orangePositionVv">BikeNGo，有bike就可Go！</div>
+                        <p class="hpP16Vv">
+                            近年來戶外運動風氣盛行，單車人口不斷增加，台灣本有成熟的單車工業，後疫情時代單車更是健康安全的休閒運動，然而，不論資深車友或入門初學者，難免有不易找到同伴交流的困擾，透過網路搜尋、商家或親友，獲得資訊往往零碎紛雜，於是我們便提供喜愛單車的朋友，一個完整方便的交流平台，認識同好，隨時呼朋引伴，並參加行程開騎。
+                        </p>
+                    </div>
+                </div>
+                <div class="hpAboutUsImgWrapVv">
+                    <img src="./img/hpAboutUs.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="hpSelectedTripVv hpSectionVv hpSectionMobileVv" id="hpSelectedTripVv">
+
+            <div class="hpTitleMarkWrapVv">
+                <div class="hpTitleMarkVv">
+                    <div class="hpTitleMarkContentVv">精選行程</div>
+                </div>
+            </div>
+
+            <div class="hpP22Vv centerVv">『　依照不同需求，為您規劃好專屬於您的完美行程　』</div>
+            <div class="row flex-xl-row justify-content-center">
+                <div class="col-12 col-xl-2 d-flex flex-xl-column ">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripCurveWordsVv">
+                            ITINERARY
+                        </div>
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv1">
+                            <div class="hpSelectedTripPicWrapVv">
+                                <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center                         align-items-xl-center centerVv hpSelectedTripContentVv">
+                        <div class="hpTitleOrangeVv">地區</div>
+                        <div class="hpP16Vv centerVv">
+                            依照北、中、南、東部<br>
+                            來劃分行程路線
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-xl-2 d-flex flex-row-reverse flex-xl-column ">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripCurveWordsVv">
+                            ITINERARY
+                        </div>
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv2">
+                            <div class="hpSelectedTripPicWrapVv">
+                                <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center                         align-items-xl-center centerVv hpSelectedTripContentVv">
+                        <div class="hpTitleOrangeVv">熱門景點</div>
+                        <div class="hpP16Vv centerVv">
+                            依照北、中、南、東部<br>
+                            來劃分行程路線
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-xl-2 d-flex flex-xl-column ">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripCurveWordsVv">
+                            ITINERARY
+                        </div>
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv3">
+                            <div class="hpSelectedTripPicWrapVv">
+                                <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center                         align-items-xl-center centerVv hpSelectedTripContentVv">
+                        <div class="hpTitleOrangeVv">難易度</div>
+                        <div class="hpP16Vv centerVv">
+                            依照等級區分，找到最<br>
+                            適合自己的路線
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
 
@@ -673,6 +1250,78 @@ display:none>>物體完全不存在 */
             scrollLast = scrollNow;
         })
 
+        // 以下為banner輪播
+
+        let hpBannerVv = 0
+        let bannerWidthVv = $('.hpBannerWrapVv').width();
+        let myInterValvv;
+
+        $(window).resize(function () {
+            bannerWidthVv = $('.hpBannerWrapVv').width();
+            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+        })
+
+        $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+        $('.hpSliderDotsVv li').hover(function () {
+            hpBannerVv = $(this).index();
+
+            $(this).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+            $('.imgWrapVv').css('left', $(this).index() * - bannerWidthVv + 'px');
+        });
+
+        $('.imgWrapVv li').click(function () {
+            console.log($(this).index());
+        });
+
+        function startCarouselvv() {
+            myInterValvv = setInterval(() => {
+                hpBannerVv = hpBannerVv + 1;
+                console.log('hpBannerVv', hpBannerVv);
+                if (hpBannerVv > 2) {
+                    hpBannerVv = 0;
+                }
+
+                changeCarouselViewvv();
+            }, 3000);
+        }
+
+        startCarouselvv();
+
+        $('.hpBannerArrowLeftVv').click(function () {
+            hpBannerVv--;
+            if (hpBannerVv < 0) {
+                hpBannerVv = 2;
+            }
+            changeCarouselViewvv()
+            console.log('hpBannerVv-1', (hpBannerVv))
+        })
+
+        $('.hpBannerArrowRightVv').click(function () {
+            hpBannerVv++;
+            if (hpBannerVv > 2) {
+                hpBannerVv = 0;
+            }
+            changeCarouselViewvv();
+            console.log('hpBannerVv+1', (hpBannerVv))
+        })
+
+        $('.hpBannerWrapVv').mouseenter(function () {
+            clearInterval(myInterValvv);
+        })
+
+        $('.hpBannerWrapVv').mouseleave(function () {
+            startCarouselvv();
+        })
+
+        function changeCarouselViewvv() {
+            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+
+
+            $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+        }
+
         // $(window).scroll(function () {
         //     console.log('windowHeight', $(window).height());
         //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
@@ -699,6 +1348,8 @@ display:none>>物體完全不存在 */
             // console.log('topButtonWrapVv a click');
             // $('h1').html('從這開始放你的內123');
         });
+
+
 
 
 
