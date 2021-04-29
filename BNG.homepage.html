@@ -759,7 +759,6 @@ display:none>>物體完全不存在 */
                 position: relative;
             }
 
-
             .hpTitleOrangeLineVv::after {
                 display: none;
             }
@@ -795,8 +794,8 @@ display:none>>物體完全不存在 */
 
         }
 
-        .row {
-            margin: 66px auto;
+        .rowMtVv {
+            margin: 132px auto;
         }
 
         .hpP22Vv {
@@ -805,14 +804,24 @@ display:none>>物體完全不存在 */
             letter-spacing: 2.2px;
             line-height: 50px;
             color: #003366;
+            margin-bottom: 66px;
         }
 
         .centerVv {
             text-align: center;
         }
 
+
+
         .hpSelectedTripPicWrapOutVv {
             position: relative;
+        }
+
+        .hpSelectedTripPicWrapOutVv svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
 
         .hpSelectedTripPicWrapOutVv1::before {
@@ -867,10 +876,47 @@ display:none>>物體完全不存在 */
             height: fit-content;
         }
 
+
+
+        /* view more button */
+        .hpViewMoreButtonWrapVv {
+            width: 260px;
+            height: 60px;
+            margin: 0px auto;
+            background-color: #F1F1F1;
+        }
+
+        .hpViewMoreVv {
+            color: #003366;
+            font-size: 16px;
+            font-family: 'Roboto', sans-serif;
+            line-height: 50px;
+        }
+
+        .arrowWrapVv {
+            width: 65px;
+        }
+
         @media (max-width:576px) {
+            .hpSectionVv {
+                margin-top: 26px;
+            }
+
             .hpSelectedTripPicWrapOutVv {
                 width: 100%;
                 flex-shrink: 1;
+            }
+
+            .hpSelectedTripPicWrapVv {
+                width: 100%;
+                height: 118.75px;
+            }
+
+            .hpSelectedTripPicWrapVv img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* height: fit-content; */
             }
 
             .hpP22Vv {
@@ -884,11 +930,59 @@ display:none>>物體完全不存在 */
                 text-align: left;
             }
 
+            .wordsWrapVv {
+                white-space: normal;
+            }
+
             .hpSelectedTripCurveWordsVv {
                 display: none;
             }
+
+            .hpViewMoreButtonWrapVv {
+                width: 180px;
+                height: 40px;
+            }
+
+            .hpViewMoreVv {
+                font-size: 12px;
+            }
         }
 
+        .noheadimgWrapVv {
+            width: 100%;
+            margin-top: 150px;
+        }
+
+        .mobileVv {
+            display: none;
+        }
+
+        @media (max-width:576px) {
+            .webVv {
+                display: none;
+            }
+
+            .mobileVv {
+                display: block;
+            }
+
+            .noheadimgWrapVv {
+                margin-top: 26px;
+                font-size: 0px;
+            }
+        }
+
+        .hpContainerFromFriendVv {
+            margin: 0 auto;
+            width: 1640px;
+        }
+
+        @media (max-width:576px) {
+            .hpContainerFromFriendVv {
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
 
         /* 以下為footer */
         .footerVv {
@@ -1070,6 +1164,7 @@ display:none>>物體完全不存在 */
                 </div>
             </div>
         </div>
+        <!-- 以下為SelectedTrip -->
         <div class="hpSelectedTripVv hpSectionVv hpSectionMobileVv" id="hpSelectedTripVv">
 
             <div class="hpTitleMarkWrapVv">
@@ -1079,22 +1174,33 @@ display:none>>物體完全不存在 */
             </div>
 
             <div class="hpP22Vv centerVv">『　依照不同需求，為您規劃好專屬於您的完美行程　』</div>
-            <div class="row flex-xl-row justify-content-center">
+            <div class="row flex-xl-row justify-content-xl-center rowMtVv">
                 <div class="col-12 col-xl-2 d-flex flex-xl-column ">
-                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
-                        <div class="hpSelectedTripCurveWordsVv">
-                            ITINERARY
-                        </div>
-                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv1">
-                            <div class="hpSelectedTripPicWrapVv">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 px-0 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv1 ">
+                            <div class="hpSelectedTripPicWrapVv mx-auto">
                                 <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                            <div class="hpSelectedTripCurveWordsVv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="294" height="400" viewBox="0 0 294 294">
+                                    <defs>
+                                        <path id="tophalf" d="M0,200S.68,61.29,147,53c0,0,139.42-1.08,147,147"
+                                            transform="translate(0 -60)" />
+                                    </defs>
+                                    <!-- <circle id="Ellipse_61" data-name="Ellipse 61" cx="147" cy="147" r="147"
+                                        fill="#f1f1f1" /> -->
+                                    <text x="0" y="10" style="stroke: #003366;" text-anchor="middle">
+                                        <textPath xlink:href="#tophalf" startOffset="50%" style="letter-spacing: 10px;">
+                                            ITINERARY</textPath>
+                                    </text>
+                                </svg>
                             </div>
                         </div>
                     </div>
                     <div
                         class="col-7 col-xl-12 flex-xl-column justify-content-xl-center                         align-items-xl-center centerVv hpSelectedTripContentVv">
                         <div class="hpTitleOrangeVv">地區</div>
-                        <div class="hpP16Vv centerVv">
+                        <div class="hpP16Vv centerVv ">
                             依照北、中、南、東部<br>
                             來劃分行程路線
                         </div>
@@ -1102,34 +1208,58 @@ display:none>>物體完全不存在 */
 
                 </div>
                 <div class="col-12 col-xl-2 d-flex flex-row-reverse flex-xl-column ">
-                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
-                        <div class="hpSelectedTripCurveWordsVv">
-                            ITINERARY
-                        </div>
-                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv2">
-                            <div class="hpSelectedTripPicWrapVv">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 px-0 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv2 ">
+                            <div class="hpSelectedTripPicWrapVv mx-auto">
                                 <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                            <div class="hpSelectedTripCurveWordsVv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="294" height="400" viewBox="0 0 294 294">
+                                    <defs>
+                                        <path id="tophalf" d="M0,200S.68,61.29,147,53c0,0,139.42-1.08,147,147"
+                                            transform="translate(0 -60)" />
+                                    </defs>
+                                    <!-- <circle id="Ellipse_61" data-name="Ellipse 61" cx="147" cy="147" r="147"
+                                        fill="#f1f1f1" /> -->
+                                    <text x="0" y="10" style="stroke: #003366;" text-anchor="middle">
+                                        <textPath xlink:href="#tophalf" startOffset="50%" style="letter-spacing: 10px;">
+                                            ITINERARY</textPath>
+                                    </text>
+                                </svg>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center                         align-items-xl-center centerVv hpSelectedTripContentVv">
+                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center  px-0                      align-items-xl-center centerVv hpSelectedTripContentVv">
                         <div class="hpTitleOrangeVv">熱門景點</div>
-                        <div class="hpP16Vv centerVv">
-                            依照北、中、南、東部<br>
-                            來劃分行程路線
+                        <div class="hpP16Vv centerVv webVv">
+                            依照北、中、南、東部<br>來劃分行程路線
+                        </div>
+                        <div class="hpP16Vv centerVv wordsWrapVv mobileVv">
+                            依照北、中、南、東部來劃分行程路線
                         </div>
                     </div>
-
                 </div>
+
                 <div class="col-12 col-xl-2 d-flex flex-xl-column ">
-                    <div class="col-5 col-xl-12 flex-xl-shrink-1 hpSelectedTripPicBigWrapVv">
-                        <div class="hpSelectedTripCurveWordsVv">
-                            ITINERARY
-                        </div>
-                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv3">
-                            <div class="hpSelectedTripPicWrapVv">
+                    <div class="col-5 col-xl-12 flex-xl-shrink-1 px-0 hpSelectedTripPicBigWrapVv">
+                        <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv3 ">
+                            <div class="hpSelectedTripPicWrapVv mx-auto">
                                 <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                            </div>
+                            <div class="hpSelectedTripCurveWordsVv">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="294" height="400" viewBox="0 0 294 294">
+                                    <defs>
+                                        <path id="tophalf" d="M0,200S.68,61.29,147,53c0,0,139.42-1.08,147,147"
+                                            transform="translate(0 -60)" />
+                                    </defs>
+                                    <!-- <circle id="Ellipse_61" data-name="Ellipse 61" cx="147" cy="147" r="147"
+                                        fill="#f1f1f1" /> -->
+                                    <text x="0" y="10" style="stroke: #003366;" text-anchor="middle">
+                                        <textPath xlink:href="#tophalf" startOffset="50%" style="letter-spacing: 10px;">
+                                            ITINERARY</textPath>
+                                    </text>
+                                </svg>
                             </div>
                         </div>
                     </div>
@@ -1141,219 +1271,246 @@ display:none>>物體完全不存在 */
                             適合自己的路線
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
-
-
-    </div>
-    <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
-
-    <div id="foot" class="footerVv">
-        <div class="footerContentVv">
-            <div class="flexWrap">
-                <ul>
-                    <li>
-                        <a href="#">會員服務條款</a>
-                    </li>
-                    <li>
-                        <a href="#">隱私權聲明</a>
-                    </li>
-                </ul>
+            <div class="hpViewMoreButtonWrapVv d-flex justify-content-center align-items-center">
+                <div class="hpViewMoreButtonVv d-flex justify-content-center align-items-baseline">
+                    <div class="hpViewMoreVv">VIEW MORE</div>
+                    <div class="arrowWrapVv"><img src="./img/arrowThin.svg" alt=""></div>
+                </div>
             </div>
-            <p>© 2021 Bike N Go, All Rights Reserved</p>
+            <div class="noheadimgWrapVv webVv">
+                <img src="./img/hpPic1.png" alt="">
+                <img src="./img/hpPic1Bottom.png" alt="">
+            </div>
+            <div class="noheadimgWrapVv mobileVv">
+                <img src="./img/hpPic1.png" alt="">
+                <img src="./img/hpPic1Bottom.png" alt="">
+            </div>
+            <!-- 以下為Friend -->
+
+            <div class="hpContainerFromFriendVv">
+                <div class=" hpFriendVv hpSectionVv hpSectionMobileVv justify-content-xl-center" id="hpFriendVv">
+                    <div class="col-xl-2 offset-xl-2">
+                        <div class="hpTitleMarkWrapVv">
+                            <div class="hpTitleMarkVv">
+                                <div class="hpTitleMarkContentVv">認識朋友</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offset-xl-2 hpP22Vv">『　加個好友，<br>一同享受前所未有的騎行體驗吧！　』</div>
+                </div>
+            </div>
+
+
+
         </div>
-    </div>
+        <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
+
+        <div id="foot" class="footerVv">
+            <div class="footerContentVv">
+                <div class="flexWrap">
+                    <ul>
+                        <li>
+                            <a href="#">會員服務條款</a>
+                        </li>
+                        <li>
+                            <a href="#">隱私權聲明</a>
+                        </li>
+                    </ul>
+                </div>
+                <p>© 2021 Bike N Go, All Rights Reserved</p>
+            </div>
+        </div>
 
 
 
 
-    <script src="./jquery-3.6.0.js"></script>
+        <script src="./jquery-3.6.0.js"></script>
 
-    <script>
-        // 以下為navBar下拉選單
-        $('body').click(function () {
-            console.log('body click');
-            $('.dropDownAccountVv').addClass('hide');
-            $('.memberVvSubMenu').addClass('hide');
-            $('.dropDownCartVv').addClass('hide');
-            $('.dropDownMenuVv').addClass('hide');
-            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-            $('.plusIcon').removeClass('minus');
-        })
+        <script>
+            // 以下為navBar下拉選單
+            $('body').click(function () {
+                console.log('body click');
+                $('.dropDownAccountVv').addClass('hide');
+                $('.memberVvSubMenu').addClass('hide');
+                $('.dropDownCartVv').addClass('hide');
+                $('.dropDownMenuVv').addClass('hide');
+                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+                $('.plusIcon').removeClass('minus');
+            })
 
-        $('.accountIconVv').click(function () {
-            event.stopPropagation();
-            console.log('accountIconVv click');
-            $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
+            $('.accountIconVv').click(function () {
+                event.stopPropagation();
+                console.log('accountIconVv click');
+                $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
 
-            $('.dropDownAccountVv').toggleClass('hide');
+                $('.dropDownAccountVv').toggleClass('hide');
 
-            $('.dropDownCartVv').addClass('hide').addClass('accountShow');
-            $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
-            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-            $('.plusIcon').removeClass('minus');
-        })
+                $('.dropDownCartVv').addClass('hide').addClass('accountShow');
+                $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
+                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+                $('.plusIcon').removeClass('minus');
+            })
 
-        $('.memberVv').click(function () {
-            event.stopPropagation();
-            console.log('memberVv click');
-            $('.memberVvSubMenu').toggleClass('hide');
-            $('.plusIcon').toggleClass('minus');
-            $('.dropDownAccountVv').toggleClass('dropDownAccountVvTotalHeightVv')
-        })
+            $('.memberVv').click(function () {
+                event.stopPropagation();
+                console.log('memberVv click');
+                $('.memberVvSubMenu').toggleClass('hide');
+                $('.plusIcon').toggleClass('minus');
+                $('.dropDownAccountVv').toggleClass('dropDownAccountVvTotalHeightVv')
+            })
 
-        $('.cartIconVv').click(function () {
-            event.stopPropagation();
-            console.log('cartIconVv');
-            // $('.dropDownMenuVv').addClass('cartShow');
-            $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
-            $('.dropDownCartVv').toggleClass('hide');
-            $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
-            $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
-            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-            $('.plusIcon').removeClass('minus');
-        })
+            $('.cartIconVv').click(function () {
+                event.stopPropagation();
+                console.log('cartIconVv');
+                // $('.dropDownMenuVv').addClass('cartShow');
+                $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
+                $('.dropDownCartVv').toggleClass('hide');
+                $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
+                $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
+                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+                $('.plusIcon').removeClass('minus');
+            })
 
-        $('.menuIconVv').click(function () {
-            event.stopPropagation();
-            $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
-            $('.dropDownMenuVv').toggleClass('hide');
-            $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
-            $('.dropDownCartVv').addClass('hide').addClass('menuShow');
-            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-            $('.plusIcon').removeClass('minus');
-        })
+            $('.menuIconVv').click(function () {
+                event.stopPropagation();
+                $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
+                $('.dropDownMenuVv').toggleClass('hide');
+                $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
+                $('.dropDownCartVv').addClass('hide').addClass('menuShow');
+                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+                $('.plusIcon').removeClass('minus');
+            })
 
-        // 以下為navBar fixed and show/hide
-        let scrollLast = 0;
+            // 以下為navBar fixed and show/hide
+            let scrollLast = 0;
 
-        $(window).scroll(function () {
-            // console.log('scroll top', $(this).scrollTop());
-            let scrollNow = $(this).scrollTop();
+            $(window).scroll(function () {
+                // console.log('scroll top', $(this).scrollTop());
+                let scrollNow = $(this).scrollTop();
 
 
-            if (scrollNow <= 300) {
-                $('.navBarOutVv').removeClass('hideNav');
-            }
-            else {
-                if (scrollLast < scrollNow) {
-                    // console.log('往下');
-                    $('.navBarOutVv').addClass('hideNav');
-                }
-                else {
-                    // console.log('往上');
+                if (scrollNow <= 300) {
                     $('.navBarOutVv').removeClass('hideNav');
                 }
+                else {
+                    if (scrollLast < scrollNow) {
+                        // console.log('往下');
+                        $('.navBarOutVv').addClass('hideNav');
+                    }
+                    else {
+                        // console.log('往上');
+                        $('.navBarOutVv').removeClass('hideNav');
+                    }
+                }
+                scrollLast = scrollNow;
+            })
+
+            // 以下為banner輪播
+
+            let hpBannerVv = 0
+            let bannerWidthVv = $('.hpBannerWrapVv').width();
+            let myInterValvv;
+
+            $(window).resize(function () {
+                bannerWidthVv = $('.hpBannerWrapVv').width();
+                $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+            })
+
+            $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+            $('.hpSliderDotsVv li').hover(function () {
+                hpBannerVv = $(this).index();
+
+                $(this).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+                $('.imgWrapVv').css('left', $(this).index() * - bannerWidthVv + 'px');
+            });
+
+            $('.imgWrapVv li').click(function () {
+                console.log($(this).index());
+            });
+
+            function startCarouselvv() {
+                myInterValvv = setInterval(() => {
+                    hpBannerVv = hpBannerVv + 1;
+                    console.log('hpBannerVv', hpBannerVv);
+                    if (hpBannerVv > 2) {
+                        hpBannerVv = 0;
+                    }
+
+                    changeCarouselViewvv();
+                }, 3000);
             }
-            scrollLast = scrollNow;
-        })
 
-        // 以下為banner輪播
+            startCarouselvv();
 
-        let hpBannerVv = 0
-        let bannerWidthVv = $('.hpBannerWrapVv').width();
-        let myInterValvv;
+            $('.hpBannerArrowLeftVv').click(function () {
+                hpBannerVv--;
+                if (hpBannerVv < 0) {
+                    hpBannerVv = 2;
+                }
+                changeCarouselViewvv()
+                console.log('hpBannerVv-1', (hpBannerVv))
+            })
 
-        $(window).resize(function () {
-            bannerWidthVv = $('.hpBannerWrapVv').width();
-            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
-        })
-
-        $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
-
-        $('.hpSliderDotsVv li').hover(function () {
-            hpBannerVv = $(this).index();
-
-            $(this).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
-
-            $('.imgWrapVv').css('left', $(this).index() * - bannerWidthVv + 'px');
-        });
-
-        $('.imgWrapVv li').click(function () {
-            console.log($(this).index());
-        });
-
-        function startCarouselvv() {
-            myInterValvv = setInterval(() => {
-                hpBannerVv = hpBannerVv + 1;
-                console.log('hpBannerVv', hpBannerVv);
+            $('.hpBannerArrowRightVv').click(function () {
+                hpBannerVv++;
                 if (hpBannerVv > 2) {
                     hpBannerVv = 0;
                 }
-
                 changeCarouselViewvv();
-            }, 3000);
-        }
+                console.log('hpBannerVv+1', (hpBannerVv))
+            })
 
-        startCarouselvv();
+            $('.hpBannerWrapVv').mouseenter(function () {
+                clearInterval(myInterValvv);
+            })
 
-        $('.hpBannerArrowLeftVv').click(function () {
-            hpBannerVv--;
-            if (hpBannerVv < 0) {
-                hpBannerVv = 2;
+            $('.hpBannerWrapVv').mouseleave(function () {
+                startCarouselvv();
+            })
+
+            function changeCarouselViewvv() {
+                $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+
+
+                $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
             }
-            changeCarouselViewvv()
-            console.log('hpBannerVv-1', (hpBannerVv))
-        })
 
-        $('.hpBannerArrowRightVv').click(function () {
-            hpBannerVv++;
-            if (hpBannerVv > 2) {
-                hpBannerVv = 0;
-            }
-            changeCarouselViewvv();
-            console.log('hpBannerVv+1', (hpBannerVv))
-        })
-
-        $('.hpBannerWrapVv').mouseenter(function () {
-            clearInterval(myInterValvv);
-        })
-
-        $('.hpBannerWrapVv').mouseleave(function () {
-            startCarouselvv();
-        })
-
-        function changeCarouselViewvv() {
-            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+            // $(window).scroll(function () {
+            //     console.log('windowHeight', $(window).height());
+            //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
+            //         $('.topButtonWrapVv').addClass('show');
+            //     }
+            //     else {
+            //         $('.topButtonWrapVv').removeClass('show');
+            //     };
+            // });
 
 
-            $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
-        }
+            // 以下為topButton
+            $(window).scroll(function () {
+                if ($(window).scrollTop() > 300) {
+                    $('.topButtonWrapVv').addClass('show');
+                }
+                else {
+                    $('.topButtonWrapVv').removeClass('show');
+                };
+            });
 
-        // $(window).scroll(function () {
-        //     console.log('windowHeight', $(window).height());
-        //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
-        //         $('.topButtonWrapVv').addClass('show');
-        //     }
-        //     else {
-        //         $('.topButtonWrapVv').removeClass('show');
-        //     };
-        // });
-
-
-        // 以下為topButton
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 300) {
-                $('.topButtonWrapVv').addClass('show');
-            }
-            else {
-                $('.topButtonWrapVv').removeClass('show');
-            };
-        });
-
-        $('.topButtonWrapVv').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, '300')
-            // console.log('topButtonWrapVv a click');
-            // $('h1').html('從這開始放你的內123');
-        });
+            $('.topButtonWrapVv').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, '300')
+                // console.log('topButtonWrapVv a click');
+                // $('h1').html('從這開始放你的內123');
+            });
 
 
 
 
 
-    </script>
+        </script>
 
 
 </body>
