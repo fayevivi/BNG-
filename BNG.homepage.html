@@ -9,415 +9,26 @@
 
 
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/js/bootstrap.bundle.js">
+
     <link rel="stylesheet" href="./bootstrap-4.6.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="./BNG.header.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-        body {
-            /* max-width: 1920px; */
-            margin: 0px;
-            padding: 0px;
-            font-family: 'Noto Sans TC', sans-serif;
-            font-weight: normal;
-            /* regular=normal=400 */
-
-        }
-
-        a {
-            text-decoration: none;
-            color: #003366;
-            font-size: 16px;
-        }
-
-        a:hover {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0px;
-        }
-
-        img {
-            width: 100%;
-        }
-
-        /* 以下navBar */
-
-        .navBarOutVv {
-            width: 100%;
-            background-color: #FFF;
-            position: fixed;
-            width: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: .5s;
-            z-index: 9999999;
-        }
-
-        .navBarVv {
-            max-width: 1220px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 22.5px auto;
-            font-size: 16px;
-            color: #003366;
-            position: relative;
-            /* padding: 0px 40px; */
-            /* margin: 40px 350px; */
-        }
-
-        .hideNav {
-            transform: translate(-50%, -135px);
-        }
-
-        .navBarRightVv {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .mainMenuVv {
-            margin-left: auto;
-        }
-
-        .mainMenuVv>ul {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            text-align: center;
-            margin: 0px 40px;
-        }
-
-        .mainMenuVv>ul>li {
-            padding: 0px 20px;
-            position: relative;
-        }
-
-        .mainMenuVv>ul li:nth-child(4)::after {
-            display: none;
-        }
-
-        .mainMenuVv>ul>li::after {
-            width: 1px;
-            height: 16px;
-            background-color: #003366;
-            display: block;
-            content: "";
-            position: absolute;
-            top: 50%;
-            right: 0px;
-            transform: translateY(-50%);
-        }
-
-        .iconWrapVv {
-            margin-left: auto;
-        }
-
-        .iconWrapVv>ul {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0px;
-            /* position: relative; */
-        }
-
-        .iconWrapVv>ul>li {
-            margin: 10px;
-            width: 35px;
-            height: 35px;
-        }
-
-        .dropDownAccountVv {
-            background-color: #FFF;
-            display: block;
-            position: absolute;
-            text-align: center;
-            margin-top: 10px;
-            line-height: 2rem;
-            border: 1px solid #003366;
-            padding: 0px 20px;
-            border-radius: 10px;
-            right: 0;
-            height: 102px;
-            overflow: hidden;
-            transition: height .3s ease-in, border .25s linear;
-        }
-
-        /* 兩個class name中間沒有空格表示有A及B才生效;
-         兩個class name中間沒有空格表示有A或B都生效;*/
-        .dropDownAccountVv.hide {
-            /* display: none; */
-            height: 0px;
-            border: 0px solid #003366;
-        }
-
-        .dropDownAccountVvTotalHeightVv {
-            height: 234px;
-        }
-
-        .memberVvSubMenu {
-            background-color: #FFF;
-            height: 132px;
-            overflow: hidden;
-            transition: height .3s ease-in, border .25s linear;
-            /* overflow: hidden; */
-        }
-
-        .memberVvSubMenu.hide {
-            /* display: none; */
-            height: 0px;
-            border: 0px solid #003366;
-        }
-
-        .dropDownAccountVv li {
-            border-bottom: 1px solid #003366;
-        }
-
-        .dropDownAccountVv ul li:nth-child(1) {
-            border-top: 1px solid #003366;
-        }
-
-        .dropDownAccountVv ul li:nth-child(4) {
-            border-bottom: none;
-        }
-
-        .dropDownAccountVv>li:nth-child(3) {
-            border-bottom: none;
-        }
-
-        .dropDownCartVv {
-            background-color: #FFF;
-            display: block;
-            /* display: none; */
-            position: absolute;
-            text-align: center;
-            margin-top: 10px;
-            line-height: 2rem;
-            border: 1px solid #003366;
-            padding: 0px 20px;
-            border-radius: 10px;
-            right: 0;
-            height: 100px;
-            overflow: hidden;
-            transition: height .3s ease-in, border .25s linear;
-        }
-
-        .dropDownCartVv.hide {
-            /* display: none; */
-            height: 0px;
-            border: 0px solid #003366;
-        }
-
-        .dropDownCartVv li {
-            border-bottom: 1px solid #003366;
-        }
-
-        .dropDownCartVv>li:nth-child(3) {
-            border-bottom: none;
-        }
-
-        .menuIconVv {
-            display: none;
-        }
-
-        .menuIconVv.hide {
-            display: none;
-        }
-
-
-        .cartShow,
-        .accountShow {
-            transition: 0s;
-        }
-
-        .plusIcon {
-            background-color: #003366;
-            /* background-color: #FF7300; */
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            position: relative;
-            display: inline-block;
-            margin: 10px 0 -2px 5px;
-            transition: .3s;
-        }
-
-        .plusIcon.minus {
-            background-color: #FF7300;
-        }
-
-        .plusIcon::before {
-            content: '';
-            display: block;
-            width: 60%;
-            height: 2px;
-            background-color: #FFF;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .plusIcon::after {
-            content: '';
-            display: block;
-            width: 60%;
-            height: 2px;
-            background-color: #FFF;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(90deg);
-            transition: .3s;
-        }
-
-        .plusIcon.minus::after {
-            transform: translate(-50%, -50%);
-        }
-
-
-
-        @media (max-width:576px) {
-            .navBarVv {
-                margin: 10px 30px;
-                position: relative;
-            }
-
-            .logoWrapVv {
-                width: 130px;
-            }
-
-            .mainMenuVv {
-                display: none;
-            }
-
-            .menuIconVv {
-                display: block;
-            }
-
-            .iconWrapVv>ul>li {
-                margin: 0px 0px;
-            }
-
-            .iconWrapVv img {
-                width: 30px;
-                height: 30px;
-            }
-
-            .iconWrapVv .cartIconVv {
-                margin: 0px 12px;
-            }
-
-            .dropDownAccountVv {
-                /* display: none; */
-                display: block;
-                width: 90%;
-                top: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .dropDownCartVv {
-                display: block;
-                /* display: none; */
-                width: 90%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .dropDownMenuVv.hide {
-                /* display: none; */
-                height: 0px;
-                border: 0px solid #003366;
-            }
-
-            .dropDownMenuVv {
-                background-color: #FFF;
-                display: block;
-                /* display: none; */
-                position: absolute;
-                text-align: center;
-                margin-top: 10px;
-                line-height: 2rem;
-                border: 1px solid #003366;
-                padding: 0px 20px;
-                border-radius: 10px;
-                width: 90%;
-                left: 50%;
-                transform: translateX(-50%);
-                height: 133px;
-                overflow: hidden;
-                transition: height .3s ease-in, border .25s linear;
-            }
-
-            .menuShow,
-            .cartShow,
-            .accountShow {
-                transition: 0s;
-            }
-
-            .dropDownMenuVv li {
-                border-bottom: 1px solid #003366;
-            }
-
-            .dropDownMenuVv li:nth-last-child(1) {
-                border-bottom: none;
-            }
-
-        }
-
-        /* 以下為Top Button */
-        .topButtonWrapVv {
-            background-image: url(./img/top.svg);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            /* transition: .3s; */
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            opacity: 0;
-            transition: .3s;
-            background-color: rgba(255, 255, 255, 0.452);
-            visibility: hidden;
-            z-index: 999999;
-            /* display: none; */
-        }
-
-        /* opacity:0>>變透明肉眼看不見但物體及功能完全都存在;
-visibility:hidden>>看不見但物體存在不過無功能，點不到;
-display:none>>物體完全不存在 */
-
-        .topButtonWrapVv.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media(max-width:576px) {
-            .topButtonWrapVv {
-                bottom: 17px;
-                right: 17px;
-                width: 50px;
-                height: 50px;
-                background-position: center;
-                background-size: cover;
-            }
-
-            .topButtonWrapVv img {
-                width: 100%;
-                height: 100%;
-            }
-
-        }
 
         /* 以下為banner */
 
         .hpContentVv {
             padding-top: 100px;
+        }
+
+        .hpContentVv img {
+            width: 100%;
         }
 
         @media (max-width:576px) {
@@ -809,7 +420,7 @@ display:none>>物體完全不存在 */
             letter-spacing: 2.2px;
             line-height: 50px;
             color: #003366;
-            margin-bottom: 66px;
+            margin-bottom: 26px;
         }
 
         .centerVv {
@@ -904,6 +515,10 @@ display:none>>物體完全不存在 */
         }
 
         @media (max-width:576px) {
+            .rowMtVv {
+                margin: 0px auto 0px;
+            }
+
             .hpSectionVv {
                 margin-top: 26px;
             }
@@ -930,6 +545,7 @@ display:none>>物體完全不存在 */
                 font-size: 16px;
                 letter-spacing: 1.6px;
                 line-height: 24px;
+                margin-bottom: 22px;
             }
 
             .centerVv {
@@ -978,6 +594,12 @@ display:none>>物體完全不存在 */
             }
         }
 
+        /* friendSection */
+        .hpFriendCarouselVv {
+            width: 1088px;
+        }
+
+
         .hpContainerVv {
             margin: 0 auto;
             width: 1640px;
@@ -990,6 +612,13 @@ display:none>>物體完全不存在 */
 
         .hpProfileImgWrapVv {
             position: relative;
+            width: 90%;
+        }
+
+        .hpProfileImgWrapVv img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .cityTagVv {
@@ -1021,6 +650,12 @@ display:none>>物體完全不存在 */
             font-weight: 400;
         }
 
+
+        .profileIconsVv {
+            justify-content: center;
+            align-items: center;
+        }
+
         .addFriendVv {
             width: 31.49px;
             height: 31.49px;
@@ -1032,8 +667,8 @@ display:none>>物體完全不存在 */
         }
 
         .couponVv {
-            width: 29px;
-            height: 29px;
+            width: 33px;
+            height: 22px;
         }
 
         .scaleXVv {
@@ -1044,6 +679,16 @@ display:none>>物體完全不存在 */
             .hpContainerVv {
                 margin: 0 auto;
                 width: 100%;
+            }
+
+            .hpFriendCarouselVv {
+                width: 100%;
+            }
+
+            .cityTagVv {
+                font-size: 14px;
+                letter-spacing: 0.7px;
+                line-height: 14px;
             }
         }
 
@@ -1082,45 +727,27 @@ display:none>>物體完全不存在 */
             left: 70px;
         }
 
+        .hpReviewCarouselVv {
+            width: 1088px;
+        }
+
         .blueBgVv {
             background-color: #003366;
             border-radius: 10px;
             padding: 15px;
             position: relative;
+            /* border-image: url(./img/vv.png) 20 round;
+            border: 20px solid transparent; */
         }
 
         .borderDashVv {
             position: relative;
-            border-radius: 10px;
-            /* border: 3px dashed #FFF; */
-        }
-
-        .borderDashVv svg {
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            fill: transparent;
-            stroke: #FFF;
+            border: 15px solid transparent;
+            border-image: url(./img/vv.png) 15 round;
             width: 100%;
-            height: 100%;
+            height: fit-content;
 
         }
-
-        .borderDashVv rect {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* .dashBorderVv {
-            position: absolute;
-            border-radius: 10px;
-            border: 2px dashed #FFF;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1, 1);
-        } */
 
         .starsWrapVv {
             margin: 55px auto 30px;
@@ -1159,6 +786,34 @@ display:none>>物體完全不存在 */
             margin: 30px auto 110px;
         }
 
+        .slick-prev,
+        .slick-next {
+            width: 44px;
+            height: 44px;
+        }
+
+        .slick-prev {
+            left: -100px;
+        }
+
+        .slick-next {
+            right: -90px
+        }
+
+        .slick-prev,
+        .slick-next {
+            z-index: 9999;
+        }
+
+        .slick-next:before {
+            content: url("./img/icon.arrow.right.svg");
+        }
+
+        .slick-prev:before {
+            content: url("./img/icon.arrow.left.svg");
+        }
+
+
         @media (max-width:576px) {
             .hpCurveBgWrapVv {
                 width: 100%;
@@ -1182,6 +837,10 @@ display:none>>物體完全不存在 */
                 padding-top: 36px;
             }
 
+            .hpReviewCarouselVv {
+                width: 100%;
+            }
+
             .hpPaddingX30Vv {
                 padding: 0px 30px;
             }
@@ -1194,7 +853,7 @@ display:none>>物體完全不存在 */
             .bigHeadWrapVv {
                 width: 70px;
                 height: 70px;
-                bottom: -30px;
+                bottom: -60px;
                 left: 50%;
                 transform: translateX(-50%);
                 border: 4px solid #003366;
@@ -1222,22 +881,22 @@ display:none>>物體完全不存在 */
         }
 
         .dashlineVv::before {
-            content: "";
+            content: url(./img/dashStraightLine.svg);
             display: block;
             width: 1px;
             height: 142px;
-            border-left: 1px dashed #707070;
+            /* border-left: 1px dashed #707070; */
             position: absolute;
             top: 0;
             left: 0;
         }
 
         .dashlineVv::after {
-            content: "";
+            content: url(./img/dashStraightLine.svg);
             display: block;
             width: 1px;
             height: 142px;
-            border-left: 1px dashed #707070;
+            /* border-left: 1px dashed #707070; */
             position: absolute;
             top: 0;
             right: 0;
@@ -1284,10 +943,15 @@ display:none>>物體完全不存在 */
             right: 0;
         }
 
-        .hpContactUsFormVv .col-xl-6 {
-            margin-top: 16px;
-            height: auto;
+        .hpContactUsMapWrapVv {
+            /* margin-top: 0px; */
+            width: 100%;
             background-color: #FFF;
+            height: 100%;
+        }
+
+        .hpContactUsMapWrapVv iframe {
+            width: 100%;
         }
 
         .hpContactUsFormVv .col-xl-2 {
@@ -1295,16 +959,21 @@ display:none>>物體完全不存在 */
         }
 
         .hpContactUsFormVv input {
+            width: 100%;
             border: none;
             margin: 16px auto;
             padding: 16px 0px 16px 20px;
+        }
+
+        .hpContactUsFormVv input:nth-child(1) {
+            margin-top: 0px;
         }
 
         ::-webkit-input-placeholder {
             color: #003366
         }
 
-        textarea {
+        .textareaVv {
             padding: 16px 0px 16px 20px;
             border: none;
             margin: 16px auto;
@@ -1404,52 +1073,53 @@ display:none>>物體完全不存在 */
     <div class="navBarOutVv">
         <div class="navBarVv">
             <div class="logoWrapVv">
-                <img src="./img/logo.svg" alt="">
+                <img class="img100Vv" src="./img/logo.svg" alt="">
             </div>
             <div class="navBarRightVv">
                 <div class="mainMenuVv">
-                    <ul>
-                        <li><a href="#">關於我們</a></li>
-                        <li><a href="#">精選行程</a></li>
-                        <li><a href="#">認識好友</a></li>
-                        <li><a href="#">聯絡我們</a></li>
+                    <ul class="mainMenuUlVv">
+                        <li><a class="AVv" href="#hpAboutUsVv">關於我們</a></li>
+                        <li><a class="AVv" href="#hpSelectedTripVv">精選行程</a></li>
+                        <li><a class="AVv" href="#hpFriendVv">認識好友</a></li>
+                        <li><a class="AVv" href="#hpContactUsVv">聯絡我們</a></li>
                     </ul>
                 </div>
                 <div class="iconWrapVv">
-                    <ul>
+                    <ul class="iconWrapUlVv">
                         <li class="accountIconVv"><a href="#">
-                                <img src="./img/account.svg" alt="">
+                                <img class="img100Vv" src="./img/account.svg" alt="">
                             </a>
                             <ul class="dropDownAccountVv hide">
-                                <li><a href="#">登入/註冊</a>
+                                <li><a class="AVv" href="#">登入/註冊</a>
                                 </li>
                                 <li class="memberVv">會員中心<div class="plusIcon "></div>
                                     <ul class="memberVvSubMenu hide ">
-                                        <li><a href="#">好友列表</a></li>
-                                        <li><a href="#">收信夾</a></li>
-                                        <li><a href="#">優惠券</a></li>
-                                        <li><a href="#">交友個人頁</a></li>
+                                        <li><a class="AVv" href="#">好友列表</a></li>
+                                        <li><a class="AVv" href="#">收信夾</a></li>
+                                        <li><a class="AVv" href="#">優惠券</a></li>
+                                        <li><a class="AVv" href="#">交友個人頁</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">登出</a></li>
+                                <li><a class="AVv" href="#">登出</a></li>
                             </ul>
                         </li>
 
-                        <li class="cartIconVv"><a href="#"><img src="./img/cart.svg" alt=""></a>
+                        <li class="cartIconVv"><a class="AVv" href="#"><img class="img100Vv" src="./img/cart.svg"
+                                    alt=""></a>
                             <ul class="dropDownCartVv hide">
-                                <li><a href="#">待結帳清單</a></li>
-                                <li><a href="#">已購買行程</a></li>
-                                <li><a href="#">收藏行程</a></li>
+                                <li><a class="AVv" href="#">待結帳清單</a></li>
+                                <li><a class="AVv" href="#">已購買行程</a></li>
+                                <li><a class="AVv" href="#">收藏行程</a></li>
                             </ul>
                         </li>
-                        <li class="menuIconVv"><a href="#">
-                                <img src="./img/menu.svg" alt="">
+                        <li class="menuIconVv"><a class="AVv" href="#">
+                                <img class="img100Vv" src="./img/menu.svg" alt="">
                             </a>
                             <ul class="dropDownMenuVv hide">
-                                <li><a href="#">關於我們</a></li>
-                                <li><a href="#">精選行程</a></li>
-                                <li><a href="#">認識好友</a></li>
-                                <li><a href="#">聯絡我們</a></li>
+                                <li><a class="AVv" href="#hpAboutUsVv">關於我們</a></li>
+                                <li><a class="AVv" href="#hpSelectedTripVv">精選行程</a></li>
+                                <li><a class="AVv" href="#hpFriendVv">認識好友</a></li>
+                                <li><a class="AVv" href="#hpContactUsVv">聯絡我們</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -1479,8 +1149,8 @@ display:none>>物體完全不存在 */
             </div>
             <ul class="imgWrapVv d-flex list-unstyled">
                 <li><img src="./img/hpBanner1.png" alt=""></li>
-                <li><img src="./img/hpBanner1.png" alt=""></li>
-                <li><img src="./img/hpBanner1.png" alt=""></li>
+                <li><img src="./img/hpBanner2.png" alt=""></li>
+                <li><img src="./img/hpBanner3.png" alt=""></li>
             </ul>
             <ul class="hpSliderDotsVv">
                 <li></li>
@@ -1574,7 +1244,8 @@ display:none>>物體完全不存在 */
                     <div class="col-5 col-xl-12 flex-xl-shrink-1 px-0 hpSelectedTripPicBigWrapVv">
                         <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv2 ">
                             <div class="hpSelectedTripPicWrapVv mx-auto">
-                                <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                                <!-- <img src="./img/1598514291phpsCxGBc.jpeg" alt=""> -->
+                                <img src="./img/long-shot-man-riding-bike (1).png" alt="">
                             </div>
                             <div class="hpSelectedTripCurveWordsVv">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="294" height="400" viewBox="0 0 294 294">
@@ -1593,7 +1264,7 @@ display:none>>物體完全不存在 */
                         </div>
                     </div>
                     <div
-                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center  px-0                      align-items-xl-center centerVv hpSelectedTripContentVv">
+                        class="col-7 col-xl-12 flex-xl-column justify-content-xl-center  px-0  align-items-xl-center centerVv hpSelectedTripContentVv">
                         <div class="hpTitleOrangeVv">熱門景點</div>
                         <div class="hpP16Vv centerVv webVv">
                             依照北、中、南、東部<br>來劃分行程路線
@@ -1608,7 +1279,8 @@ display:none>>物體完全不存在 */
                     <div class="col-5 col-xl-12 flex-xl-shrink-1 px-0 hpSelectedTripPicBigWrapVv">
                         <div class="hpSelectedTripPicWrapOutVv hpSelectedTripPicWrapOutVv3 ">
                             <div class="hpSelectedTripPicWrapVv mx-auto">
-                                <img src="./img/1598514291phpsCxGBc.jpeg" alt="">
+                                <!-- <img src="./img/1598514291phpsCxGBc.jpeg" alt=""> -->
+                                <img src="./img/pexels-pixabay-248547.png" alt="">
                             </div>
                             <div class="hpSelectedTripCurveWordsVv">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="294" height="400" viewBox="0 0 294 294">
@@ -1663,20 +1335,383 @@ display:none>>物體完全不存在 */
                 <div class="col-xl-2 offset-xl-2">
                     <div class="hpTitleMarkWrapVv">
                         <div class="hpTitleMarkVv">
-                            <div class="hpTitleMarkContentVv">認識朋友</div>
+                            <div class="hpTitleMarkContentVv">認識好友</div>
                         </div>
                     </div>
                 </div>
                 <div class="offset-xl-2 hpP22Vv">『　加個好友，<br>一同享受前所未有的騎行體驗吧！　』</div>
-                <div class="d-flex d-xl-flex mx-auto justify-content-center flex-wrap">
-                    <div class="col-xl-1 d-none d-xl-flex align-items-center justify-content-center">
-                        <div class="arrowOrangeWrapVv ">
+                <div class="hpFriendCarouselVv d-flex d-xl-none mx-auto justify-content-center flex-wrap">
+                    <!-- <div class="col-xl-1 d-none d-xl-flex align-items-center justify-content-center">
+                        <div class="arrowOrangeWrapVv">
                             <img src="./img/arrowOrange.svg" alt="">
                         </div>
+                    </div> -->
+
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6 col-xl-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="test-wrap">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/34.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 新手入門</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="hpProfileImgWrapVv">
+                                <img src="./img/69.png" alt="">
+                                <div class="cityTagVv">台北</div>
+                            </div>
+                            <div class="profileNameVv">
+                                李郝率
+                            </div>
+                            <div class="ageVv">28歲 中階車手</div>
+                            <div class="d-flex profileIconsVv mx-auto">
+                                <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                    <img src="./img/Icon - icon-user-add.svg" alt="">
+                                </div>
+                                <div class="mailVv px-1">
+                                    <img src="./img/mail.svg" alt="">
+                                </div>
+                                <div class="couponVv px-1">
+                                    <img src="./img/Icon-icon-coupon.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
+                        <div class="arrowOrangeWrapVv scaleXVv">
+                            <img src="./img/arrowOrange.svg" alt="">
+                        </div>
+                    </div> -->
+                </div>
+
+                <!-- web -->
+                <div class="hpFriendCarouselVv d-none d-xl-flex mx-auto justify-content-center flex-wrap ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="hpProfileImgWrapVv">
-                            <img src="./img/1-2012211442340-L.jpg" alt="">
+                            <img src="./img/34.png" alt="">
                             <div class="cityTagVv">台北</div>
                         </div>
                         <div class="profileNameVv">
@@ -1691,13 +1726,13 @@ display:none>>物體完全不存在 */
                                 <img src="./img/mail.svg" alt="">
                             </div>
                             <div class="couponVv px-1">
-                                <img src="./img/Icon - icon-favorite-empty.svg" alt="">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-xl-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="hpProfileImgWrapVv">
-                            <img src="./img/1-2012211442340-L.jpg" alt="">
+                            <img src="./img/69.png" alt="">
                             <div class="cityTagVv">台北</div>
                         </div>
                         <div class="profileNameVv">
@@ -1712,13 +1747,13 @@ display:none>>物體完全不存在 */
                                 <img src="./img/mail.svg" alt="">
                             </div>
                             <div class="couponVv px-1">
-                                <img src="./img/Icon - icon-favorite-empty.svg" alt="">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-xl-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="hpProfileImgWrapVv">
-                            <img src="./img/1-2012211442340-L.jpg" alt="">
+                            <img src="./img/100@2x.png" alt="">
                             <div class="cityTagVv">台北</div>
                         </div>
                         <div class="profileNameVv">
@@ -1733,13 +1768,13 @@ display:none>>物體完全不存在 */
                                 <img src="./img/mail.svg" alt="">
                             </div>
                             <div class="couponVv px-1">
-                                <img src="./img/Icon - icon-favorite-empty.svg" alt="">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 col-xl-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
                         <div class="hpProfileImgWrapVv">
-                            <img src="./img/1-2012211442340-L.jpg" alt="">
+                            <img src="./img/profile-14.png" alt="">
                             <div class="cityTagVv">台北</div>
                         </div>
                         <div class="profileNameVv">
@@ -1754,13 +1789,92 @@ display:none>>物體完全不存在 */
                                 <img src="./img/mail.svg" alt="">
                             </div>
                             <div class="couponVv px-1">
-                                <img src="./img/Icon - icon-favorite-empty.svg" alt="">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
-                        <div class="arrowOrangeWrapVv scaleXVv">
-                            <img src="./img/arrowOrange.svg" alt="">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="hpProfileImgWrapVv">
+                            <img src="./img/87.png" alt="">
+                            <div class="cityTagVv">台北</div>
+                        </div>
+                        <div class="profileNameVv">
+                            李郝率
+                        </div>
+                        <div class="ageVv">28歲 新手入門</div>
+                        <div class="d-flex profileIconsVv mx-auto">
+                            <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                <img src="./img/Icon - icon-user-add.svg" alt="">
+                            </div>
+                            <div class="mailVv px-1">
+                                <img src="./img/mail.svg" alt="">
+                            </div>
+                            <div class="couponVv px-1">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="hpProfileImgWrapVv">
+                            <img src="./img/profile-17.png" alt="">
+                            <div class="cityTagVv">台北</div>
+                        </div>
+                        <div class="profileNameVv">
+                            李郝率
+                        </div>
+                        <div class="ageVv">28歲 中階車手</div>
+                        <div class="d-flex profileIconsVv mx-auto">
+                            <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                <img src="./img/Icon - icon-user-add.svg" alt="">
+                            </div>
+                            <div class="mailVv px-1">
+                                <img src="./img/mail.svg" alt="">
+                            </div>
+                            <div class="couponVv px-1">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="hpProfileImgWrapVv">
+                            <img src="./img/73.png" alt="">
+                            <div class="cityTagVv">台北</div>
+                        </div>
+                        <div class="profileNameVv">
+                            李郝率
+                        </div>
+                        <div class="ageVv">28歲 專業騎行</div>
+                        <div class="d-flex profileIconsVv mx-auto">
+                            <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                <img src="./img/Icon - icon-user-add.svg" alt="">
+                            </div>
+                            <div class="mailVv px-1">
+                                <img src="./img/mail.svg" alt="">
+                            </div>
+                            <div class="couponVv px-1">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="hpProfileImgWrapVv">
+                            <img src="./img/profile-46.png" alt="">
+                            <div class="cityTagVv">台北</div>
+                        </div>
+                        <div class="profileNameVv">
+                            李郝率
+                        </div>
+                        <div class="ageVv">28歲 新手入門</div>
+                        <div class="d-flex profileIconsVv mx-auto">
+                            <div class="addFriendVv px-1 justify-content-center align-items-center">
+                                <img src="./img/Icon - icon-user-add.svg" alt="">
+                            </div>
+                            <div class="mailVv px-1">
+                                <img src="./img/mail.svg" alt="">
+                            </div>
+                            <div class="couponVv px-1">
+                                <img src="./img/Icon-icon-coupon.svg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1801,22 +1915,18 @@ display:none>>物體完全不存在 */
                             </div>
                         </div>
                         <div class="offset-xl-2 hpP22Vv hpPaddingX30Vv">『　有您的支持與鼓勵，是我們最棒的動力　』</div>
-                        <div class="d-flex d-xl-flex mx-auto justify-content-center">
-                            <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
+                        <div class="hpReviewCarouselVv d-flex d-xl-flex mx-auto justify-content-center">
+                            <!-- <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
                                 <div class="arrowOrangeWrapVv ">
                                     <img src="./img/arrowOrange.svg" alt="">
                                 </div>
-                            </div>
-                            <div
-                                class="col-8 col-xl-3 d-flex flex-column justify-content-center align-items-center blueBgVv">
-                                <div class="d-flex flex-column justify-content-center align-items-center ">
-                                    <!-- <div class="col-6 col-xl-3 dashBorderVv"></div> -->
+                            </div> -->
+
+                            <div class="px-3">
+                                <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
+
                                     <div
                                         class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
-                                        <svg viewbox="0 0 130 150" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                                            <rect stroke-linecap="square" stroke-linejoin="square" height="150"
-                                                width="130" x="0" y="0" rx="10" ry="10" stroke-width="2" />
-                                        </svg>
                                         <div class="starsWrapVv d-flex px-1">
                                             <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
                                             <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
@@ -1835,66 +1945,155 @@ display:none>>物體完全不存在 */
                                             HaoHao
                                         </div>
                                         <div class="bigHeadWrapVv">
-                                            <img src="./img/profile-46.jpg" alt="">
+                                            <img src="./img/72.png" alt="">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-8 col-xl-3 d-flex flex-column justify-content-center align-items-center">
+                            <div class="px-3">
                                 <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
-                                    <!-- <div class="col-6 col-xl-3 dashBorderVv"></div> -->
-                                    <div class="starsWrapVv d-flex px-1">
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                    </div>
-                                    <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
-                                        在BikeNGo網站上
-                                        結交到許多和我一樣
-                                        熱愛騎公路車的朋友
-                                        讓我不用擔心找不到一起
-                                        騎公路車的夥伴！
-                                    </div>
-                                    <div class="reviewNameVv">
-                                        HaoHao
-                                    </div>
-                                    <div class="bigHeadWrapVv">
-                                        <img src="./img/profile-46.jpg" alt="">
+                                    <div
+                                        class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
+                                        <div class="starsWrapVv d-flex px-1">
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                        </div>
+                                        <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
+                                            在BikeNGo網站上
+                                            結交到許多和我一樣
+                                            熱愛騎公路車的朋友
+                                            讓我不用擔心找不到一起
+                                            騎公路車的夥伴！
+                                        </div>
+                                        <div class="reviewNameVv">
+                                            HaoHao
+                                        </div>
+                                        <div class="bigHeadWrapVv">
+                                            <img src="./img/woman-standing-relaxing-after-exercising-holding-bottle-water-touch-face.png"
+                                                alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-8 col-xl-3 d-flex flex-column justify-content-center align-items-center">
+                            <div class="px-3">
                                 <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
-                                    <!-- <div class="col-6 col-xl-3 dashBorderVv"></div> -->
-                                    <div class="starsWrapVv d-flex px-1">
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                        <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
-                                    </div>
-                                    <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
-                                        在BikeNGo網站上
-                                        結交到許多和我一樣
-                                        熱愛騎公路車的朋友
-                                        讓我不用擔心找不到一起
-                                        騎公路車的夥伴！
-                                    </div>
-                                    <div class="reviewNameVv">
-                                        HaoHao
-                                    </div>
-                                    <div class="bigHeadWrapVv">
-                                        <img src="./img/profile-46.jpg" alt="">
+
+                                    <div
+                                        class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
+                                        <div class="starsWrapVv d-flex px-1">
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                        </div>
+                                        <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
+                                            在BikeNGo網站上
+                                            結交到許多和我一樣
+                                            熱愛騎公路車的朋友
+                                            讓我不用擔心找不到一起
+                                            騎公路車的夥伴！
+                                        </div>
+                                        <div class="reviewNameVv">
+                                            HaoHao
+                                        </div>
+                                        <div class="bigHeadWrapVv">
+                                            <img src="./img/portrait-smiling-handsome-asian-man.png" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
+                            <div class="px-3">
+                                <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
+
+                                    <div
+                                        class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
+                                        <div class="starsWrapVv d-flex px-1">
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                        </div>
+                                        <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
+                                            在BikeNGo網站上
+                                            結交到許多和我一樣
+                                            熱愛騎公路車的朋友
+                                            讓我不用擔心找不到一起
+                                            騎公路車的夥伴！
+                                        </div>
+                                        <div class="reviewNameVv">
+                                            HaoHao
+                                        </div>
+                                        <div class="bigHeadWrapVv">
+                                            <img src="./img/profile.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
+                                    <div
+                                        class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
+                                        <div class="starsWrapVv d-flex px-1">
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                        </div>
+                                        <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
+                                            在BikeNGo網站上
+                                            結交到許多和我一樣
+                                            熱愛騎公路車的朋友
+                                            讓我不用擔心找不到一起
+                                            騎公路車的夥伴！
+                                        </div>
+                                        <div class="reviewNameVv">
+                                            HaoHao
+                                        </div>
+                                        <div class="bigHeadWrapVv">
+                                            <img src="./img/80.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-column justify-content-center align-items-center blueBgVv">
+
+                                    <div
+                                        class="borderDashVv col-12 d-flex flex-column justify-content-center align-items-center">
+                                        <div class="starsWrapVv d-flex px-1">
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                            <div class="starSizeVv"><img src="./img/star.svg" alt=""></div>
+                                        </div>
+                                        <div class="col-12 hpreviewWordsVv hpP16Vv whiteVv">
+                                            在BikeNGo網站上
+                                            結交到許多和我一樣
+                                            熱愛騎公路車的朋友
+                                            讓我不用擔心找不到一起
+                                            騎公路車的夥伴！
+                                        </div>
+                                        <div class="reviewNameVv">
+                                            HaoHao
+                                        </div>
+                                        <div class="bigHeadWrapVv">
+                                            <img src="./img/profile-27 (1).png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="d-none col-xl-1 d-xl-flex align-items-center justify-content-center">
                                 <div class="arrowOrangeWrapVv scaleXVv">
                                     <img src="./img/arrowOrange.svg" alt="">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -1931,12 +2130,18 @@ display:none>>物體完全不存在 */
                 </div>
                 <div class="offset-xl-2 hpP22Vv hpPaddingX30Vv">『　若有相關問題或疑問，歡迎與我們聯繫，謝謝　』</div>
                 <div class="hpContactUsFormVv d-xl-flex justify-content-center align-items-center">
-                    <div class="d-none col-xl-6 d-xl-flex offset-xl-2"></div>
+                    <div class="d-none col-xl-6 d-xl-flex px-0 mt-0 hpContactUsMapWrapVv">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.005109018512!2d121.54120951494447!3d25.03390068397243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH562W5pyDIOaVuOS9jeaVmeiCsueglOeptuaJgCDmlbjkvY3kurrmiY3ln7nogrLkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1620031926196!5m2!1szh-TW!2stw"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                    </div>
                     <div class="col-12 col-xl-2 d-flex flex-column justify-content-center align-items-center">
                         <input type="text" name="name" placeholder="姓名：">
                         <input type="text" name="contact" placeholder="聯絡方式：">
-                        <input type="email" name="email" placeholder="E-mail：">
-                        <textarea name="comments" id="" cols="25" rows="5" placeholder="請輸入相關問題或疑問："></textarea>
+                        <input type="text" name="text" placeholder="E-mail：">
+                        <textarea class="
+                        textareaVv" name="comments" id="" cols="25" rows="5" placeholder="請輸入相關問題或疑問："></textarea>
                         <div class="hpSendButtonWrapVv">
                             送出
                         </div>
@@ -1944,213 +2149,304 @@ display:none>>物體完全不存在 */
                 </div>
             </div>
         </div>
-        <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
+    </div>
+    <!-- 請改為自己的ClassName，並在此class下padding-top:100px-->
 
-        <div id="foot" class="footerVv">
-            <div class="footerContentVv">
-                <div class="flexWrap">
-                    <ul>
-                        <li>
-                            <a href="#">會員服務條款</a>
-                        </li>
-                        <li>
-                            <a href="#">隱私權聲明</a>
-                        </li>
-                    </ul>
-                </div>
-                <p>© 2021 Bike N Go, All Rights Reserved</p>
+    <div id="foot" class="footerVv">
+        <div class="footerContentVv">
+            <div class="flexWrap">
+                <ul>
+                    <li>
+                        <a href="#">會員服務條款</a>
+                    </li>
+                    <li>
+                        <a href="#">隱私權聲明</a>
+                    </li>
+                </ul>
             </div>
+            <p>© 2021 Bike N Go, All Rights Reserved</p>
         </div>
+    </div>
 
 
 
 
-        <script src="./jquery-3.6.0.js"></script>
+    <script src="./jquery-3.6.0.js"></script>
 
-        <script>
-            // 以下為navBar下拉選單
-            $('body').click(function () {
-                console.log('body click');
-                $('.dropDownAccountVv').addClass('hide');
-                $('.memberVvSubMenu').addClass('hide');
-                $('.dropDownCartVv').addClass('hide');
-                $('.dropDownMenuVv').addClass('hide');
-                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-                $('.plusIcon').removeClass('minus');
-            })
+    <script>
+        // 以下為navBar下拉選單
+        $('body').click(function () {
+            console.log('body click');
+            $('.dropDownAccountVv').addClass('hide');
+            $('.memberVvSubMenu').addClass('hide');
+            $('.dropDownCartVv').addClass('hide');
+            $('.dropDownMenuVv').addClass('hide');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
+        })
 
-            $('.accountIconVv').click(function () {
-                event.stopPropagation();
-                console.log('accountIconVv click');
-                $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
+        $('.accountIconVv').click(function () {
+            event.stopPropagation();
+            console.log('accountIconVv click');
+            $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
 
-                $('.dropDownAccountVv').toggleClass('hide');
+            $('.dropDownAccountVv').toggleClass('hide');
 
-                $('.dropDownCartVv').addClass('hide').addClass('accountShow');
-                $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
-                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-                $('.plusIcon').removeClass('minus');
-            })
+            $('.dropDownCartVv').addClass('hide').addClass('accountShow');
+            $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
+        })
 
-            $('.memberVv').click(function () {
-                event.stopPropagation();
-                console.log('memberVv click');
-                $('.memberVvSubMenu').toggleClass('hide');
-                $('.plusIcon').toggleClass('minus');
-                $('.dropDownAccountVv').toggleClass('dropDownAccountVvTotalHeightVv')
-            })
+        $('.memberVv').click(function () {
+            event.stopPropagation();
+            console.log('memberVv click');
+            $('.memberVvSubMenu').toggleClass('hide');
+            $('.plusIcon').toggleClass('minus');
+            $('.dropDownAccountVv').toggleClass('dropDownAccountVvTotalHeightVv')
+        })
 
-            $('.cartIconVv').click(function () {
-                event.stopPropagation();
-                console.log('cartIconVv');
-                // $('.dropDownMenuVv').addClass('cartShow');
-                $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
-                $('.dropDownCartVv').toggleClass('hide');
-                $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
-                $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
-                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-                $('.plusIcon').removeClass('minus');
-            })
+        $('.cartIconVv').click(function () {
+            event.stopPropagation();
+            console.log('cartIconVv');
+            // $('.dropDownMenuVv').addClass('cartShow');
+            $('.dropDownCartVv').removeClass('accountShow').removeClass('menuShow');
+            $('.dropDownCartVv').toggleClass('hide');
+            $('.dropDownAccountVv').addClass('hide').addClass('cartShow');
+            $('.dropDownMenuVv').addClass('hide').addClass('cartShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
+        })
 
-            $('.menuIconVv').click(function () {
-                event.stopPropagation();
-                $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
-                $('.dropDownMenuVv').toggleClass('hide');
-                $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
-                $('.dropDownCartVv').addClass('hide').addClass('menuShow');
-                $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
-                $('.plusIcon').removeClass('minus');
-            })
+        $('.menuIconVv').click(function () {
+            event.stopPropagation();
+            $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
+            $('.dropDownMenuVv').toggleClass('hide');
+            $('.dropDownAccountVv').addClass('hide').addClass('menuShow');
+            $('.dropDownCartVv').addClass('hide').addClass('menuShow');
+            $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
+            $('.plusIcon').removeClass('minus');
+        })
 
-            // 以下為navBar fixed and show/hide
-            let scrollLast = 0;
+        // 以下為navBar fixed and show/hide
+        let scrollLast = 0;
 
-            $(window).scroll(function () {
-                // console.log('scroll top', $(this).scrollTop());
-                let scrollNow = $(this).scrollTop();
+        $(window).scroll(function () {
+            // console.log('scroll top', $(this).scrollTop());
+            let scrollNow = $(this).scrollTop();
 
 
-                if (scrollNow <= 300) {
-                    $('.navBarOutVv').removeClass('hideNav');
+            if (scrollNow <= 300) {
+                $('.navBarOutVv').removeClass('hideNav');
+            }
+            else {
+                if (scrollLast < scrollNow) {
+                    // console.log('往下');
+                    $('.navBarOutVv').addClass('hideNav');
                 }
                 else {
-                    if (scrollLast < scrollNow) {
-                        // console.log('往下');
-                        $('.navBarOutVv').addClass('hideNav');
-                    }
-                    else {
-                        // console.log('往上');
-                        $('.navBarOutVv').removeClass('hideNav');
-                    }
+                    // console.log('往上');
+                    $('.navBarOutVv').removeClass('hideNav');
                 }
-                scrollLast = scrollNow;
-            })
-
-            // 以下為banner輪播
-
-            let hpBannerVv = 0
-            let bannerWidthVv = $('.hpBannerWrapVv').width();
-            let myInterValvv;
-
-            $(window).resize(function () {
-                bannerWidthVv = $('.hpBannerWrapVv').width();
-                $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
-            })
-
-            $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
-
-            $('.hpSliderDotsVv li').hover(function () {
-                hpBannerVv = $(this).index();
-
-                $(this).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
-
-                $('.imgWrapVv').css('left', $(this).index() * - bannerWidthVv + 'px');
-            });
-
-            $('.imgWrapVv li').click(function () {
-                console.log($(this).index());
-            });
-
-            function startCarouselvv() {
-                myInterValvv = setInterval(() => {
-                    hpBannerVv = hpBannerVv + 1;
-                    console.log('hpBannerVv', hpBannerVv);
-                    if (hpBannerVv > 2) {
-                        hpBannerVv = 0;
-                    }
-
-                    changeCarouselViewvv();
-                }, 3000);
             }
+            scrollLast = scrollNow;
+        })
 
-            startCarouselvv();
+        // 以下為banner輪播
 
-            $('.hpBannerArrowLeftVv').click(function () {
-                hpBannerVv--;
-                if (hpBannerVv < 0) {
-                    hpBannerVv = 2;
-                }
-                changeCarouselViewvv()
-                console.log('hpBannerVv-1', (hpBannerVv))
-            })
+        let hpBannerVv = 0
+        let bannerWidthVv = $('.hpBannerWrapVv').width();
+        let myInterValvv;
 
-            $('.hpBannerArrowRightVv').click(function () {
-                hpBannerVv++;
+        $(window).resize(function () {
+            bannerWidthVv = $('.hpBannerWrapVv').width();
+            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
+        })
+
+        $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+        $('.hpSliderDotsVv li').hover(function () {
+            hpBannerVv = $(this).index();
+
+            $(this).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+
+            $('.imgWrapVv').css('left', $(this).index() * - bannerWidthVv + 'px');
+        });
+
+        $('.imgWrapVv li').click(function () {
+            console.log($(this).index());
+        });
+
+        function startCarouselvv() {
+            myInterValvv = setInterval(() => {
+                hpBannerVv = hpBannerVv + 1;
+                console.log('hpBannerVv', hpBannerVv);
                 if (hpBannerVv > 2) {
                     hpBannerVv = 0;
                 }
+
                 changeCarouselViewvv();
-                console.log('hpBannerVv+1', (hpBannerVv))
-            })
+            }, 2000);
+        }
 
-            $('.hpBannerWrapVv').mouseenter(function () {
-                clearInterval(myInterValvv);
-            })
+        startCarouselvv();
 
-            $('.hpBannerWrapVv').mouseleave(function () {
-                startCarouselvv();
-            })
-
-            function changeCarouselViewvv() {
-                $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
-
-
-                $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+        $('.hpBannerArrowLeftVv').click(function () {
+            hpBannerVv--;
+            if (hpBannerVv < 0) {
+                hpBannerVv = 2;
             }
+            changeCarouselViewvv()
+            console.log('hpBannerVv-1', (hpBannerVv))
+        })
 
-            // $(window).scroll(function () {
-            //     console.log('windowHeight', $(window).height());
-            //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
-            //         $('.topButtonWrapVv').addClass('show');
-            //     }
-            //     else {
-            //         $('.topButtonWrapVv').removeClass('show');
-            //     };
-            // });
+        $('.hpBannerArrowRightVv').click(function () {
+            hpBannerVv++;
+            if (hpBannerVv > 2) {
+                hpBannerVv = 0;
+            }
+            changeCarouselViewvv();
+            console.log('hpBannerVv+1', (hpBannerVv))
+        })
+
+        $('.hpBannerWrapVv').mouseenter(function () {
+            clearInterval(myInterValvv);
+        })
+
+        $('.hpBannerWrapVv').mouseleave(function () {
+            startCarouselvv();
+        })
+
+        function changeCarouselViewvv() {
+            $('.imgWrapVv').css('left', hpBannerVv * - bannerWidthVv + 'px');
 
 
-            // 以下為topButton
-            $(window).scroll(function () {
-                if ($(window).scrollTop() > 300) {
-                    $('.topButtonWrapVv').addClass('show');
+            $('.hpSliderDotsVv li').eq(hpBannerVv).css('backgroundColor', '#FF7300').siblings().css('backgroundColor', 'rgba(256, 256, 256, 0.56)');
+        }
+
+        // $(window).scroll(function () {
+        //     console.log('windowHeight', $(window).height());
+        //     if ($(window).scrollTop() > $(window).height() * 1 / 2) {
+        //         $('.topButtonWrapVv').addClass('show');
+        //     }
+        //     else {
+        //         $('.topButtonWrapVv').removeClass('show');
+        //     };
+        // });
+
+
+        // 以下為topButton
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                $('.topButtonWrapVv').addClass('show');
+            }
+            else {
+                $('.topButtonWrapVv').removeClass('show');
+            };
+        });
+
+        $('.topButtonWrapVv').click(function () {
+            $('html, body').animate({ scrollTop: 0 }, '300')
+            // console.log('topButtonWrapVv a click');
+            // $('h1').html('從這開始放你的內123');
+        });
+
+
+
+
+
+    </script>
+
+
+    <script type="text/javascript" src="./slick.js"></script>
+
+    <!-- hpFriendCarouselVv -->
+
+    <script>
+        $('.hpFriendCarouselVv').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        infinite: true,
+                        dots: true,
+                        arrows: false
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        arrows: false
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        arrows: false
+                    }
                 }
-                else {
-                    $('.topButtonWrapVv').removeClass('show');
-                };
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+
+
+    <!-- hpReviewCarouselVv -->
+
+    <script>
+        $('.hpReviewCarouselVv').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        arrows: true,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    </script>
+
+    <script>
+        // google map 高度調整
+        $(document).ready(function () {
+            console.log('hi', $('.hpContactUsFormVv').height());
+            $("iframe").height($('.hpContactUsFormVv').height());
+            // $("iframe").width($(window).width());
+
+            $(window).resize(function () {
+                $("iframe").height($('.hpContactUsFormVv').height());
+                // $("iframe").width($(window).width());
             });
-
-            $('.topButtonWrapVv').click(function () {
-                $('html, body').animate({ scrollTop: 0 }, '300')
-                // console.log('topButtonWrapVv a click');
-                // $('h1').html('從這開始放你的內123');
-            });
-
-
-
-
-
-        </script>
-
+        });
+    </script>
 
 </body>
 
