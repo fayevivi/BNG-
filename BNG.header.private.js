@@ -10,16 +10,13 @@ $('body').click(function () {
     $('.plusIcon').removeClass('minus');
     $('#accountIconVv').attr('src', './img/account.svg');
     $('#cartIconVv').attr('src', './img/cart.svg');
-
 })
 
 $('.accountIconVv').click(function () {
     event.stopPropagation();
     console.log('accountIconVv click');
     $('.dropDownAccountVv').removeClass('cartShow').removeClass('menuShow');
-
     $('.dropDownAccountVv').toggleClass('hide');
-
     $('.dropDownCartVv').addClass('hide').addClass('accountShow');
     $('.dropDownMenuVv').addClass('hide').addClass('accountShow');
     $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
@@ -27,6 +24,13 @@ $('.accountIconVv').click(function () {
     $('#accountIconVv').attr('src', './img/accountOrange.svg');
     $('#cartIconVv').attr('src', './img/cart.svg');
 })
+
+// $('.accountIconVv').mouseenter(function () {
+//     $('#accountIconVv').attr('src', './img/accountOrange.svg');
+// })
+// $('.accountIconVv').mouseleave(function () {
+//     $('#accountIconVv').attr('src', './img/account.svg');
+// })
 
 
 
@@ -52,7 +56,17 @@ $('.cartIconVv').click(function () {
     $('#accountIconVv').attr('src', './img/account.svg');
 })
 
+// $('.cartIconVv').mousedown(function () {
+//     $('#cartIconVv').attr('src', './img/cartOrange.svg');
+//     $('#accountIconVv').attr('src', './img/account.svg');
+// })
 
+// $('.cartIconVv').mouseenter(function () {
+//     $('#cartIconVv').attr('src', './img/cartOrange.svg')
+// })
+// $('.cartIconVv').mouseleave(function () {
+//     $('#cartIconVv').attr('src', './img/cart.svg')
+// })
 
 
 $('.menuIconVv').click(function () {
