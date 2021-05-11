@@ -10,6 +10,7 @@ $('body').click(function () {
     $('.plusIcon').removeClass('minus');
     $('#accountIconVv').attr('src', './img/account.svg');
     $('#cartIconVv').attr('src', './img/cart.svg');
+    $('#menuIconVv').attr('src', './img/menu.svg');
 
 })
 
@@ -26,6 +27,7 @@ $('.accountIconVv').click(function () {
     $('.plusIcon').removeClass('minus');
     $('#accountIconVv').attr('src', './img/accountOrange.svg');
     $('#cartIconVv').attr('src', './img/cart.svg');
+    $('#menuIconVv').attr('src', './img/menu.svg');
 })
 
 
@@ -50,12 +52,14 @@ $('.cartIconVv').click(function () {
     $('.plusIcon').removeClass('minus');
     $('#cartIconVv').attr('src', './img/cartOrange.svg');
     $('#accountIconVv').attr('src', './img/account.svg');
+    $('#menuIconVv').attr('src', './img/menu.svg');
 })
 
 
 
 
 $('.menuIconVv').click(function () {
+    console.log('orange');
     event.stopPropagation();
     $('.dropDownMenuVv').removeClass('accountShow').removeClass('cartShow');
     $('.dropDownMenuVv').toggleClass('hide');
@@ -63,6 +67,10 @@ $('.menuIconVv').click(function () {
     $('.dropDownCartVv').addClass('hide').addClass('menuShow');
     $('.dropDownAccountVv').removeClass('dropDownAccountVvTotalHeightVv');
     $('.plusIcon').removeClass('minus');
+    $('#menuIconVv').attr('src', './img/menuOrange.svg');
+    $('#accountIconVv').attr('src', './img/account.svg');
+    $('#cartIconVv').attr('src', './img/cart.svg');
+
 })
 
 // 以下為navBar fixed and show/hide
